@@ -1,9 +1,6 @@
 {% include navbar.html %}  {% include top-box.html %}
 
 
-## [Slik lager du et kursrepositorie](readme_no.html){:target="blank"} (Slettes)
-
-
 ## Kursplan  
 
 Forelesnings- og seminarplanene inneholder informasjon om tidspunkt, tema, faglærer samt ressurser/oppgaver til hvert tema.  
