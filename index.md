@@ -50,11 +50,9 @@ Mappen teller 1/3 til karakter på kurset. Den muntlige eksamen teller 2/3 til k
 
 ### Mappeinnlevering: 
 
-Frister, oppgaver og ressurser finnes her.
+Frister, oppgaver og ressurser finnes i [mappeinnleveringer](mappeinnleveringer.html){:target="blank"}.  
 
 ### Muntlig eksamen:
-
-Tidspunkt og informasjon finnes her.
-
-Frister, oppgaver og ressurser finnes i [innleveringsplan](innleveringer.html){:target="blank"}.    
+Tidspunkt og informasjon finnes i [muntlig eksamen](innleveringer.html){:target="blank"}.  
+ 
 
