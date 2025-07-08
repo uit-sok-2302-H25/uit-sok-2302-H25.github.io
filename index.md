@@ -48,8 +48,13 @@ Kunngjøringer og beskjeder legges ut i [Canvas](https://uit.instructure.com/){:
 Kurset har mappeevaluering og muntlig eksamen.  Mappen har to deler - én skriftlig innlevering og én muntlig presentasjon av den skriftlige innleveringen. Mappeoppgavene skal gjennomføres i grupper på maksimalt 3 personer (vi anbefaler 2 personer per gruppe). Den muntlige eksamen er individuell.
 Mappen teller 1/3 til karakter på kurset. Den muntlige eksamen teller 2/3 til karakter på kurset.
 
-Mappeinnlevering: Frister, oppgaver og ressurser finnes her.
-Muntlig eksamen: Tidspunkt og informasjon finnes her.
+### Mappeinnlevering: 
+
+Frister, oppgaver og ressurser finnes her.
+
+### Muntlig eksamen:
+
+Tidspunkt og informasjon finnes her.
 
 Frister, oppgaver og ressurser finnes i [innleveringsplan](innleveringer.html){:target="blank"}.    
 
