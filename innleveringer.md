@@ -49,7 +49,6 @@ Der er lov å bruke KI til å løse utfordringen. Det er ikke lov å la KI skriv
 Formålet med forfatterdeklarasjonen er å gi en oversikt av hvem som har gjort hva i oppgaven. 
 * Beskrivelse av bidrag fra enhver gruppemedlem
 
-
 ### Innlevering
 * Oppgaven leveres inn i Canvas
 * Det er tilstrekkelig at én i gruppen leverer inn oppgaven
@@ -57,3 +56,10 @@ Formålet med forfatterdeklarasjonen er å gi en oversikt av hvem som har gjort 
 * Bruk filnavn: sok2302_studentkode1_studentkode2_studentkode3_filtype, der filtype beskriver type fil: oppgave, kode, AI-deklarasjon, forfatter-deklarasjon
   
 ## Mappeoppgave 2 - Muntlig presentasjon
+Oppgaven består i å presentere innholdet i den skriftlige mappeoppgaven. 
+
+Presentasjonen skal være maks 15 minutter lang. 
+
+For å få karakter på mappen må de samme personene som leverte inn mappeoppgave 1 delta aktivt i presentasjonen i mappeoppgave 2. 
+
+Presentasjonen skal skje muntlig ved bruk av lysbilder. Lysbildene skal leveres inn på Canvas før presentasjonen (se Frister for mappeinnleveringer). 
