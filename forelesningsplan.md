@@ -17,7 +17,7 @@ Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.ui
 |23. Sept.         |  10:15 - 12:00 |Forelesning      | Forurensing       |TL: kap 7    |
 |20. Sept.        |  10:15 - 12:00 |Seminar      | Forurensing       |TL: kap 7    |
 |14. Okt.        |  10:15 - 12:00 |Forelesning      | Klimaendringer 1      |TL: kap 11    |
-|17. Okt.        |  10:15 - 12:00 |Forelesning      | Tilpasning - Flom, skogbrann og vattenmangel       |TL: kap 14    |
+|17. Okt.        |  10:15 - 12:00 |Forelesning      | Tilpasning - Flom, skogbrann og vannnmangel       |TL: kap 14    |
 |21. Okt.         |  10:15 - 12:00 |Seminar     | TBA      |TL: TBA    |
 |24. Okt.         |  08:15 - 10:00 |Forelesning      | Bærekraftig utvikling og sirkulær økonomi 1      |TL: kap 20, SØ    |
 |28. Okt.        |  10:15 - 12:00 |Forelesning      | Bærekraftig utvikling og sirkulær økonomi 1       |TL: kap 20, SØ    |
