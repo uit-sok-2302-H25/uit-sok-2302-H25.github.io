@@ -6,11 +6,12 @@
 - Skriftlige mappeoppgaver leveres i Canvas.
 
 ## Frister for mappeoppgavene
-| Type oppgave                       | Innleveringsfrist | Ressurser |
-|------------------------------------|-------------------|-----------|
-|Mappeoppgave 1 (skriftlig innlevering)                     |  2025.11.06 kl 17:00            | kommer    |
-|Mappeoppgave 2 (muntlig presentasjon - innlevering)                     | 2025.11.12 kl 23:59 | kommer    |
-|Mappeoppgave 2 (muntlig presentasjon - presentasjon)                     | 2025.11.13 - 2025.11.14 kl 10:15 - 14:00  | kommer    |
+
+| Type oppgave                                        | Innleveringsfrist                        | 
+|-----------------------------------------------------|------------------------------------------|
+|Mappeoppgave 1 (skriftlig innlevering)               |  2025.11.06 kl 17:00                     | 
+|Mappeoppgave 2 (muntlig presentasjon - innlevering)  | 2025.11.12 kl 23:59                      |
+|Mappeoppgave 2 (muntlig presentasjon - presentasjon) | 2025.11.13 - 2025.11.14 kl 10:15 - 14:00 |
 
 
 ## Mappeoppgave 1 - Skriftlig mappeinnlevering
