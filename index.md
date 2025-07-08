@@ -1,5 +1,8 @@
 {% include navbar.html %}  {% include top-box.html %}
 
+## Velkommen til kurset SOK-2302: Miljø- og naturressursøkonomi!
+
+Kurset SOK-2302 har som mål å gi deg kunnskap, ferdigheter og kompetanse innenfor temaet miljø- og naturressursøkonomi. På kurset vil du lære teorier om hvorfor miljø og naturressurser er spesielle goder, og de utfordringer dette fører med seg. Du vil i tillegg få en innføring i bærekraftig utvikling og sirkulær økonomi.
 
 ## Kursplan  
 
@@ -11,9 +14,6 @@ Innleveringsplanen gir oppgaver, frister og ressurser i forbindelse med obligato
 - [Innleveringsplan og innleveringsoppgaver](innleveringer.html){:target="blank"}
 - [Timeplan]([https://timeplan.uit.no/](https://tp.educloud.no/uit/app/schedule?semester=25h&scheduleType=course&filterOpen=true&summary=true&tab=calendar&course=SOK-2302%C2%A41)){:target="blank"}
 
-
-## Kursbeskrivelse 
-Kurset SOK-2302 har som mål å gi deg kunnskap, ferdigheter og kompetanse innenfor temaet miljø- og naturressursøkonomi. På kurset vil du lære teorier om hvorfor miljø og naturressurser er spesielle goder, og de utfordringer dette fører med seg. Du vil i tillegg få en innføring i bærekraftig utvikling og sirkulær økonomi.
 
 
 ## Faglærerinfo  
