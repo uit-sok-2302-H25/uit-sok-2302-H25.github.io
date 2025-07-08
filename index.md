@@ -15,15 +15,12 @@ Innleveringsplanen gir oppgaver, frister og ressurser i forbindelse med obligato
 
 
 ## Kursbeskrivelse 
-
-
-Kurset består av ulike interessante tema  
+Kurset SOK-2302 har som mål å gi deg kunnskap, ferdigheter og kompetanse innenfor temaet miljø- og naturressursøkonomi. På kurset vil du lære teorier om hvorfor miljø og naturressurser er spesielle goder, og de utfordringer dette fører med seg. Du vil i tillegg få en innføring i bærekraftig utvikling og sirkulær økonomi.
 
 
 ## Faglærerinfo  
-- [Derek J. Clark](https://uit.no/ansatte/derek.clark){:target="blank"} (fagansvarlig)
-- [Espen Sirnes](https://uit.no/ansatte/person?p_document_id=41418){:target="blank"}
-
+- [Andrea Mannberg](https://uit.no/ansatte/andrea.mannberg){:target="blank"} (fagansvarlig)
+- [Eirik Eriksen Heen](https://uit.no/ansatte/eirik.e.heen){:target="blank"}
 
 
 ## Administrative spørsmål
@@ -35,9 +32,10 @@ For henvendelser av administrative art send e-post til: <hhcampus@hjelp.uit.no>.
 
 ### Pensum til forelesningene
 
+* [Tietenberg, T. & Lewis, L. (2024). Environmental and natural resource economics - International student edition, 12th edition, Routledge, ISBN 9781032101194](https://www.routledge.com/Environmental-and-Natural-Resource-Economics/Tietenberg-Lewis/p/book/9781032101187?srsltid=AfmBOoqTm8zHLi-obfboJLbkDYJSxAmGP1sRMA-Rj7USDkdG3H0PCW8q){:target="blank"} 
+* [Handlingsplan for en sirkulær økonomi](https://www.regjeringen.no/no/dokumenter/handlingsplan-for-en-sirkular-okonomi/id3029477/){:target="blank"}
+  
 [Leganto](https://bibsys-c.alma.exlibrisgroup.com/leganto/){:target="blank"}  
-
-
 
 
 ## Kunngjøringer  
