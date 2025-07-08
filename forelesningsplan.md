@@ -2,6 +2,7 @@
 # Forelesnings- og seminarplan  
 Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.uit.no](https://tp.educloud.no/uit/app/schedule?semester=25h&scheduleType=course&filterOpen=true&summary=true&tab=calendar&course=SOK-2302%C2%A41)
 
+
 | Dato           | Tid            | Type            | Tema                              | Pensum              |
 |----------------|----------------|-----------------|-----------------------------------|--------------------|
 |19. Aug.        |  10:15 - 12:00 |Forelesning     | Introduksjon til kurset           |TL: kap 1           |
@@ -24,5 +25,6 @@ Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.ui
 
 
 TL: [Tietenberg og Lewis, 2024. Environmental and natural resource economics](https://www.routledge.com/Environmental-and-Natural-Resource-Economics/Tietenberg-Lewis/p/book/9781032101187?srsltid=AfmBOoqTm8zHLi-obfboJLbkDYJSxAmGP1sRMA-Rj7USDkdG3H0PCW8q)
+
 SØ: [Regjeringen.no, 2024. Handlingsplan for sirkulær økonomi](https://www.regjeringen.no/no/dokumenter/handlingsplan-for-en-sirkular-okonomi/id3029477/)
 
