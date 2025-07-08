@@ -28,12 +28,9 @@ For henvendelser av administrative art send e-post til: <hhcampus@hjelp.uit.no>.
 
 ## Pensum  
 
-### Pensum til forelesningene
-
 * [Tietenberg, T. & Lewis, L. (2024). Environmental and natural resource economics - International student edition, 12th edition, Routledge, ISBN 9781032101194](https://www.routledge.com/Environmental-and-Natural-Resource-Economics/Tietenberg-Lewis/p/book/9781032101187?srsltid=AfmBOoqTm8zHLi-obfboJLbkDYJSxAmGP1sRMA-Rj7USDkdG3H0PCW8q){:target="blank"} 
 * [Handlingsplan for en sirkulær økonomi](https://www.regjeringen.no/no/dokumenter/handlingsplan-for-en-sirkular-okonomi/id3029477/){:target="blank"}
-  
-[Leganto](https://bibsys-c.alma.exlibrisgroup.com/leganto/){:target="blank"}  
+* [Leganto](https://bibsys-c.alma.exlibrisgroup.com/leganto/){:target="blank"}  
 
 
 ## Kunngjøringer  
