@@ -6,8 +6,8 @@
 Forelesnings- og seminarplanene inneholder informasjon om tidspunkt, tema, faglærer samt ressurser/oppgaver til hvert tema.  
 Innleveringsplanen gir oppgaver, frister og ressurser i forbindelse med obligatoriske innleveringer.  
 
-- [Forelesningsplan](forelesningsplan.html){:target="blank"}
-- [Seminarplan](seminarplan.html){:target="blank"}
+- [Forelesnings- og seminarplan](forelesningsplan.html){:target="blank"}
+- [Forelesningsnotater og seminaroppgaver](seminarplan.html){:target="blank"}
 - [Innleveringsplan](innleveringer.html){:target="blank"}   
 
 
