@@ -1,7 +1,5 @@
 {% include navbar.html %}{% include top-box.html %}
-# Sok-2302 Miljø- og Naturressursøkonomi 
-
-## Mappeoppgaver
+#  Mappeoppgaver
 - Mappeoppgavene er obligatoriske, og teller totalt til 1/3 av karakter på kurset (skala: A - F)
 - Kurset har to mappeoppgaver, én skriftlig innlevering og én muntlig presentasjon av den skriftlige mappeinnleveringen. 
 - Mappeoppgavene gjennomføres i grupper om 1 - 3 personer.  Det vil ikke gis mulighet å gjennomføre oppgavene i grupper på flere enn 3 personer. Den skriftlige innleveringen og den muntlige presentasjonen gjennomføres i samme gruppe. 
