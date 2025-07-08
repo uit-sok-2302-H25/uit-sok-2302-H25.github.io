@@ -8,10 +8,8 @@ Innleveringsplanen gir oppgaver, frister og ressurser i forbindelse med obligato
 
 - [Forelesnings- og seminarplan](forelesningsplan.html){:target="blank"}
 - [Forelesningsnotater og seminaroppgaver](forelesninger.html){:target="blank"}
-- [Innleveringsplan](innleveringer.html){:target="blank"}   
-
-
-[Timeplan](https://timeplan.uit.no/){:target="blank"} på timeplan.uit.no
+- [Innleveringsplan og innleveringsplan](innleveringer.html){:target="blank"}
+- [Timeplan]([https://timeplan.uit.no/](https://tp.educloud.no/uit/app/schedule?semester=25h&scheduleType=course&filterOpen=true&summary=true&tab=calendar&course=SOK-2302%C2%A41)){:target="blank"}
 
 
 ## Kursbeskrivelse 
