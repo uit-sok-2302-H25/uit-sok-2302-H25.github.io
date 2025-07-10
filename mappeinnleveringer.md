@@ -15,7 +15,7 @@
 |[Mappeoppgave 3 - muntlig presentasjon](#mappeoppgave-3)  | 2025.11.13 - 2025.11.14 kl 10:15 - 14:00 |
 
 
-## Skriftlige mappeinnleveringer
+## Mappeoppgave 1 og 2 (skriftlige mappeinnleveringer)
 **De to skriftlige mappeinnleveringene henger sammen. I mappeoppgave 1 skal dere oppsummere innholdet i et kapittel i Tietenberg og Lewis og identifisere den underliggende markedssvikten som gir opphav til problemet som blir beskrevet. I mappeoppgave 2 skal dere analysere et problem på samme tema og som er relevant for Tromsø eller Norge generelt.** 
 
 For hver skriftlig mappeinnlevering skal 4 dokumenter leveres inn:
@@ -62,8 +62,8 @@ Formålet med forfatterdeklarasjonen er å gi en oversikt av hvem som har gjort 
 5. Diskuter i hvilken grad tiltaket er samfunnsøkonomisk effektivt. 
 
 
-## Muntlig presentasjon (mappeoppgave 3)
-Oppgaven består i å presentere innholdet i de to skriftlige mappeoppgavene. 
+## Mappeoppgave 3
+Oppgaven består i å lage en lysbilde-presentasjon og presentere innholdet i de to skriftlige mappeoppgavene. 
 
 Presentasjonen skal være maks 15 minutter lang. 
 
