@@ -55,11 +55,14 @@ Formålet med forfatterdeklarasjonen er å gi en oversikt av hvem som har gjort 
 2. Forklar den underliggende markedssvikten som årsaker problemet som blir beskrevet i kapitlet. Forklaringen skal bygge på samfunnsøkonomiske teorier som inngår i kurset (teoriene blir gått igjennom i andre kapitler i Tietenberg og Lewis). Forklaringen skal beskrives i tekst og illustreres grafisk. **Omfang:** cirka 1-2 sider
 
 ### Mappeoppgave 2
+
 1. Beskriv et problem som er relatert til temaet i det kapittel i Tietenberg og Lewis som ble analysert i mappeoppgave 1. Problemet skal være relevant enten for Tromsø, eller for Norge generelt.
 2. Illustrer problemet ved bruk av empiriske data
 3. Forklar minst et politisk tiltak som har til mål å enten vurdere eller løse problemet. Tiltaket skal være samfunnsøkonomisk begrunnet.
 4. Illustrer tiltaket grafisk. Illustrasjonen trenger ikke være basert på empiriske data, fokus her skal være på teoretiske mekanismer (hvordan tiltaket påvirker markedssvikten). 
-5. Diskuter i hvilken grad tiltaket er samfunnsøkonomisk effektivt. 
+5. Diskuter i hvilken grad tiltaket er samfunnsøkonomisk effektivt.
+
+**Omfang:** maks 4 sider
 
 
 ## Mappeoppgave 3
