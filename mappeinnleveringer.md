@@ -10,9 +10,9 @@
 | Type oppgave                                        | Innleveringsfrist                        | 
 |-----------------------------------------------------|------------------------------------------|
 |[Mappeoppgave 1](#mappeoppgave-1)                    |  2025.10.03 kl 17:00                     | 
-|Mappeoppgave 2 (skriftlig innlevering)               |  2025.11.06 kl 17:00                     | 
-|Mappeoppgave 2 (muntlig presentasjon - innlevering)  | 2025.11.12 kl 23:59                      |
-|Mappeoppgave 2 (muntlig presentasjon - presentasjon) | 2025.11.13 - 2025.11.14 kl 10:15 - 14:00 |
+|[Mappeoppgave 2](#mappeoppgave-2)                    |  2025.11.06 kl 17:00                     | 
+|[Mappeoppgave 3 - skriftlig innlevering](#mappeoppgave-3)     | 2025.11.12 kl 23:59                      |
+|[Mappeoppgave 3 - muntlig presentasjon](#mappeoppgave-3)  | 2025.11.13 - 2025.11.14 kl 10:15 - 14:00 |
 
 
 ## Skriftlige mappeinnleveringer
