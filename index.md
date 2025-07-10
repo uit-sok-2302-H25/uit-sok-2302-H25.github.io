@@ -40,7 +40,7 @@ Kunngjøringer og beskjeder legges ut i [Canvas](https://uit.instructure.com/){:
 
 ## Innlevering og eksamen  
 
-Kurset har mappeevaluering og muntlig eksamen.  Mappen har to deler - én skriftlig innlevering og én muntlig presentasjon av den skriftlige innleveringen. Mappeoppgavene skal gjennomføres i grupper på maksimalt 3 personer (vi anbefaler 2 personer per gruppe). Den muntlige eksamen er individuell. Mappen og muntlig eksamen har karakterskala A - F. Mappen teller 1/3 til karakter på kurset. Den muntlige eksamen teller 2/3 til karakter på kurset.
+Kurset har mappeevaluering og muntlig eksamen. Mappeoppgavene skal gjennomføres i grupper på maksimalt 3 personer (vi anbefaler 2 personer per gruppe). Den muntlige eksamen er individuell. Mappen og muntlig eksamen har karakterskala A - F. Mappen teller 1/3 til karakter på kurset. Den muntlige eksamen teller 2/3 til karakter på kurset.
 
 ### Mappeinnlevering: 
 
