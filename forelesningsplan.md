@@ -6,7 +6,7 @@ Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.ui
 | Dato           | Tid            | Type            | Tema                              | Pensum              |
 |----------------|----------------|-----------------|-----------------------------------|--------------------|
 |19. Aug.        |  10:15 - 12:00 |Forelesning     | Introduksjon til kurset           |TL: kap 1           |
-|21. Aug.        |  08:15 - 10:00 |Forelesning      | Eiendomsrettigheter, eksternaliteter, og miljøproblemer|TL: kap 2       |
+|21. Aug.        |  08:15 - 10:00 |Forelesning      | Introduksjon til faget - Eiendomsrettigheter, eksternaliteter, og miljøproblemer|TL: kap 2       |
 |26. Aug.        |  10:15 - 12:00 |Seminar          | Eiendomsrettigheter, eksternaliteter, og miljøproblemer |TL: kap 2      |
 |29. Aug.        |  08:15 - 11:00 |Forelesning      | Kostnytte analyse       |TL: kap 3    |
 |02. Sept.        |  10:15 - 12:00 |Forelesning          | Vurdering av miljø       |TL: kap 4    |
