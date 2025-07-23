@@ -70,6 +70,6 @@ Oppgaven består i å lage en lysbilde-presentasjon og presentere innholdet i de
 
 Presentasjonen skal være maks 15 minutter lang. 
 
-For å få karakter på mappen må de samme personene som leverte inn mappeoppgave 1 delta aktivt i presentasjonen i mappeoppgave 2. 
+For å få karakter på mappen må de samme personene som leverte inn mappeoppgave 1 og 2 delta aktivt i presentasjonen i mappeoppgave 3. 
 
 Presentasjonen skal skje muntlig ved bruk av lysbilder. Lysbildene skal leveres inn på Canvas før presentasjonen (se Frister for mappeinnleveringer). 
