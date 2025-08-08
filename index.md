@@ -9,7 +9,7 @@ Kurset SOK-2302 har som mål å gi deg kunnskap, ferdigheter og kompetanse innen
 Forelesnings- og seminarplanene inneholder informasjon om tidspunkt, tema, faglærer samt ressurser/oppgaver til hvert tema.  
 Innleveringsplanen gir oppgaver, frister og ressurser i forbindelse med obligatoriske innleveringer.  
 
-- [Forelesnings- og seminarplan]([forelesningsplan](https://uit-sok-2302-h25.github.io/forelesningsplan.html){:target="blank"}
+- [Forelesnings- og seminarplan](https://uit-sok-2302-h25.github.io/forelesningsplan.html){:target="blank"}
 - [Forelesningsnotater og seminaroppgaver](https://uit-sok-2302-h25.github.io/forelesninger.html){:target="blank"}
 - [Innleveringsplan og innleveringsoppgaver](https://uit-sok-2302-h25.github.io/mappeinnleveringer.html){:target="blank"}
 - [Timeplan](https://tp.educloud.no/uit/app/schedule?semester=25h&scheduleType=course&filterOpen=true&summary=true&tab=calendar&course=SOK-2302%C2%A41){:target="blank"}
