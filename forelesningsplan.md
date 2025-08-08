@@ -16,9 +16,9 @@ Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.ui
 |16. Sept.         |  10:15 - 12:00 |Seminar     | Dynamisk effektivitet/uttømningsbare ressurser     |TL: kap 5 og 6    |
 |23. Sept.         |  10:15 - 12:00 |Forelesning      | Forurensing       |TL: kap 7    |
 |30. Sept.        |  10:15 - 12:00 |Seminar      | Forurensing       |TL: kap 7    |
-|14. Okt.        |  10:15 - 12:00 |Forelesning      | Klimaendringer 1      |TL: kap 11    |
-|17. Okt.        |  10:15 - 12:00 |Forelesning      | Tilpasning - Flom, skogbrann og vannnmangel       |TL: kap 14    |
-|21. Okt.         |  10:15 - 12:00 |Seminar     | TBA      |TL: TBA    |
+|14. Okt.        |  10:15 - 12:00 |Forelesning      | Klimaendringer 1      |TL: kap 11, IPPC    |
+|17. Okt.        |  10:15 - 12:00 |Forelesning      | Tilpasning - Flom, skogbrann og vannnmangel       |TL: kap 14, IPCC    |
+|21. Okt.         |  10:15 - 12:00 |Seminar     | TBA      |TBA    |
 |24. Okt.         |  08:15 - 10:00 |Forelesning      | Bærekraftig utvikling og sirkulær økonomi 1      |TL: kap 20, SØ: del 2    |
 |28. Okt.        |  10:15 - 12:00 |Forelesning      | Bærekraftig utvikling og sirkulær økonomi 1       |TL: kap 20, SØ: del 2    |
 |04. Nov.        |  08:15 - 10:00 |Forelesning      | Oppsummering og informasjon om muntlig eksamen     |   |
@@ -27,4 +27,6 @@ Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.ui
 TL: [Tietenberg og Lewis, 2024. Environmental and natural resource economics](https://www.routledge.com/Environmental-and-Natural-Resource-Economics/Tietenberg-Lewis/p/book/9781032101187?srsltid=AfmBOoqTm8zHLi-obfboJLbkDYJSxAmGP1sRMA-Rj7USDkdG3H0PCW8q)
 
 SØ: [Bye et al., 2025. Ikke rett frami](gjeringen.no/contentassets/3112d52ce32943bdbd9dffafa39d10fd/no/pdfs/kld-ikkerettfram.pdf)
+
+IPCC: [Intergovernmental panel on climate change, 2023. Sythesis report](https://www.ipcc.ch/synthesis-report/)
 
