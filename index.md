@@ -30,8 +30,11 @@ For henvendelser av administrative art send e-post til: <hhcampus@hjelp.uit.no>.
 
 * [Tietenberg, T. & Lewis, L. (2024). Environmental and natural resource economics - International student edition, 12th edition, Routledge, ISBN 9781032101194](https://www.routledge.com/Environmental-and-Natural-Resource-Economics/Tietenberg-Lewis/p/book/9781032101187?srsltid=AfmBOoqTm8zHLi-obfboJLbkDYJSxAmGP1sRMA-Rj7USDkdG3H0PCW8q){:target="blank"} 
 * [Bye, R. et al., 2025. Ikke rett fram - Rapport fra Ekspertgruppen for utredning av virkemidler for å fremme sirkulære aktiviteter (Del 2)](https://www.regjeringen.no/contentassets/3112d52ce32943bdbd9dffafa39d10fd/no/pdfs/kld-ikkerettfram.pdf){:target="blank"}
-* [Intergovernmental panel on climate change (IPCC). 2023. Synthesis report](https://www.ipcc.ch/synthesis-report/)
 * [Leganto](https://bibsys-c.alma.exlibrisgroup.com/leganto/){:target="blank"}  
+### Støttelitteratur
+* [Dasgupta. P., (2021). Final Report - The Economics of Biodiversity: The Dasgupta Review - Abridged version, HM Treasury](https://www.gov.uk/government/publications/final-report-the-economics-of-biodiversity-the-dasgupta-review)
+* [Intergovernmental panel on climate change (IPCC). 2023. Synthesis report](https://www.ipcc.ch/synthesis-report/)
+
 
 
 ## Kunngjøringer  
