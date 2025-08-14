@@ -51,7 +51,7 @@ Formålet med forfatterdeklarasjonen er å gi en oversikt av hvem som har gjort 
 
 ### Mappeoppgave 1
 
-1. Oppsummer innholdet i **et** av følgende kapittel i Tietenberg og Lewis: 8,9, 12, 13, 15, 17, 18 eller 19. **Omfang:** cirka 1 side. 
+1. Oppsummer innholdet i **et** av følgende kapittel i Tietenberg og Lewis: 8,9, 12, 13, 15, 16, 17, 18 eller 19. **Omfang:** cirka 1-2 sider. 
 2. Forklar den underliggende markedssvikten som årsaker problemet som blir beskrevet i kapitlet. Forklaringen skal bygge på samfunnsøkonomiske teorier som inngår i kurset (teoriene blir gått igjennom i andre kapitler i Tietenberg og Lewis). Forklaringen skal beskrives i tekst og illustreres grafisk. **Omfang:** cirka 1-2 sider
 
 ### Mappeoppgave 2
