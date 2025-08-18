@@ -8,9 +8,9 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 ### F2 - Markedssvikt
 #### Forelesningsnotater
 #### Støtteressurser (youtube-filmer)
-[Almenningens tragedie](https://www.youtube.com/watch?v=CxC161GvMPc)
-[Eksternaliteter](https://www.youtube.com/watch?v=tVX_BSV-h-E)
-[Eksluderbarhet, rivalitet, og kollektive goder](https://www.youtube.com/watch?v=E1v5eRs0_fw)
+* [Almenningens tragedie](https://www.youtube.com/watch?v=CxC161GvMPc)
+* [Eksternaliteter](https://www.youtube.com/watch?v=tVX_BSV-h-E)
+* [Eksluderbarhet, rivalitet, og kollektive goder](https://www.youtube.com/watch?v=E1v5eRs0_fw)
 
 ### F3 - Kostnytteanalyse
 ### F4 - Vurdering
