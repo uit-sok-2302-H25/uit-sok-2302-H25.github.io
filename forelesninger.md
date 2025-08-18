@@ -11,6 +11,7 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [Almenningens tragedie](https://www.youtube.com/watch?v=CxC161GvMPc)
 * [Eksternaliteter](https://www.youtube.com/watch?v=tVX_BSV-h-E)
 * [Eksluderbarhet, rivalitet, og kollektive goder](https://www.youtube.com/watch?v=E1v5eRs0_fw)
+* [Asymmetrisk informasjon - skjevt utvalg](https://www.youtube.com/watch?v=sXPXpJ5vMnU)
 
 ### F3 - Kostnytteanalyse
 ### F4 - Vurdering
