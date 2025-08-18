@@ -4,7 +4,14 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 ## Forelesningsnotater og ressurser:
 
 ### [F1 - Introduksjon til kurset](https://uit-sok-2302-H25.github.io/assets/F1_sok2302_h25.pdf)
+
 ### F2 - Markedssvikt
+#### Forelesningsnotater
+#### Støtteressurser (youtube-filmer)
+[Almenningens tragedie](https://www.youtube.com/watch?v=CxC161GvMPc)
+[Eksternaliteter](https://www.youtube.com/watch?v=tVX_BSV-h-E)
+[Eksluderbarhet, rivalitet, og kollektive goder](https://www.youtube.com/watch?v=E1v5eRs0_fw)
+
 ### F3 - Kostnytteanalyse
 ### F4 - Vurdering
 ### F5 - Dynamisk effektivitet
