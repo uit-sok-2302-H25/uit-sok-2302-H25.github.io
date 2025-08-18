@@ -3,7 +3,7 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 
 ## Forelesningsnotater og ressurser:
 
-### F1 - Introduksjon til kurset
+### [F1 - Introduksjon til kurset](https://uit-sok-2302-H25.github.io/assets/F1_sok2302_h25.pdf)
 ### F2 - Markedssvikt
 ### F3 - Kostnytteanalyse
 ### F4 - Vurdering
