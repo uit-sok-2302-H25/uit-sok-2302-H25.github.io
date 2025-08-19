@@ -16,7 +16,7 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 
 #### Støtteressurser (youtube-filmer)
 * [Eksternaliteter 1 - Think Econ](https://www.youtube.com/watch?v=tVX_BSV-h-E)
-* [Eksternaliteter 2 (Marginal revolution university](https://www.youtube.com/watch?v=Bi2yqqxPAkk)
+* [Eksternaliteter 2 - Marginal revolution university](https://www.youtube.com/watch?v=Bi2yqqxPAkk)
 * [Almenningens tragedie 1- TED](https://www.youtube.com/watch?v=CxC161GvMPc)
 * [Almenningens tragedie 2 - Marginal revolution university](https://www.youtube.com/watch?v=bs2P0wRod8U)
 * [Allmeningens tragedie 3 - Fiske (Flott forklaring til figur 2.5!) - Conservation Strategy Fund](https://www.youtube.com/watch?v=7DNhqtYf47E)
@@ -35,6 +35,7 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [Kostnytte-analyse 1: Intro - Conservation Strategy Fund](https://www.youtube.com/watch?v=7tdKkeNClPE&t=4s)
 * [Kostnytte-analyse 2: Diskontering - Conservation Strategy Fund](https://www.youtube.com/watch?v=Mol1yT7tczY)
 * [Kostnytte-analyse 3: Nettonåverdie - Conservation Strategy Fund](https://www.youtube.com/watch?v=2HXwiCoYM8o)
+
 ### F4 - Vurdering av miljøgoder
 
 #### Forelesningsnotater
@@ -59,6 +60,10 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 
   
 ### F8 - Klima 1
+
+#### Forelesningsnotater
+#### Støtteressurser
+* [The Tipping Points of Climate Change — and Where We Stand. Johan Rockström. TED](https://www.youtube.com/watch?v=Vl6VhCAeEfQ)
 ### F9 - Klima 2
 ### F10 - Bærekraftig utvikling og sirkulær økonomi 1
 
