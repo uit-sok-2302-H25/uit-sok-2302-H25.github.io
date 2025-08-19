@@ -26,3 +26,6 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 
 ## Seminaroppgaver:
 
+### Seminar 1
+* Seminaroppgave
+
