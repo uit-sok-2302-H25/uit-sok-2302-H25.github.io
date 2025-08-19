@@ -19,6 +19,7 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [Eksternaliteter 2 (Marginal revolution university](https://www.youtube.com/watch?v=Bi2yqqxPAkk)
 * [Almenningens tragedie 1- TED](https://www.youtube.com/watch?v=CxC161GvMPc)
 * [Almenningens tragedie 2 - Marginal revolution university](https://www.youtube.com/watch?v=bs2P0wRod8U)
+* [Allmeningens tragedie 3 - Fiske (Flott forklaring til figur 2.5!) - Conservation Strategy Fund](https://www.youtube.com/watch?v=7DNhqtYf47E)
 * [Eksluderbarhet, rivalitet, og kollektive goder -  Conservation Strategy Fund](https://www.youtube.com/watch?v=E1v5eRs0_fw)
 * [Kollektive goder og beskyttelse fra asteorider -  Marginal revolution university](https://www.youtube.com/watch?v=lLzcW5NG5eA)
 * [Mer om kollektiver goder -  Marginal revolution university](https://www.youtube.com/watch?v=hA2z-X31IvI)
@@ -34,7 +35,18 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [Kostnytte-analyse 1: Intro - Conservation Strategy Fund](https://www.youtube.com/watch?v=7tdKkeNClPE&t=4s)
 * [Kostnytte-analyse 2: Diskontering - Conservation Strategy Fund](https://www.youtube.com/watch?v=Mol1yT7tczY)
 * [Kostnytte-analyse 3: Nettonåverdie - Conservation Strategy Fund](https://www.youtube.com/watch?v=2HXwiCoYM8o)
-### F4 - Vurdering
+### F4 - Vurdering av miljøgoder
+
+#### Forelesningsnotater
+
+#### Støtteressurser
+* [Introduksjon til vurdering - Conservation Strategy Fund](https://www.youtube.com/watch?v=0CHIs9dLvxA)
+* [Verdier knyttet til økosystemer - Conservation Strategy Fund](https://www.youtube.com/watch?v=q8AZHtF2f50)
+* [Vurdering 1: Contingent valuation - Conservation Strategy Fund](https://www.youtube.com/watch?v=__xzmIG4L8s)
+* [Vurdering 2: Valgeksemperiment - Conservation Strategy Fund](https://www.youtube.com/watch?v=txScPIsxyCM)
+* [Vurdering 3: Hedoniske priser - Conservation Strategy Fund](https://www.youtube.com/watch?v=LkXVCQam5kw)
+
+  
 ### F5 - Dynamisk effektivitet
 ### F6 - Uttømmingsbare ressurser
 ### F7 - Kontroll av forurrensing
