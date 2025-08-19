@@ -12,11 +12,14 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [F2 - Markedssvikt](https://uit-sok-2302-H25.github.io/assets/F2_sok2302_h25.pdf)
 
 #### Støtteressurser (youtube-filmer)
-* [Eksternaliteter 1](https://www.youtube.com/watch?v=tVX_BSV-h-E)
-* [Eksternaliteter 2](https://www.youtube.com/watch?v=Bi2yqqxPAkk)
-* [Almenningens tragedie](https://www.youtube.com/watch?v=CxC161GvMPc)
-* [Eksluderbarhet, rivalitet, og kollektive goder](https://www.youtube.com/watch?v=E1v5eRs0_fw)
-* [Asymmetrisk informasjon - skjevt utvalg](https://www.youtube.com/watch?v=sXPXpJ5vMnU)
+* [Eksternaliteter 1 - Think Econ](https://www.youtube.com/watch?v=tVX_BSV-h-E)
+* [Eksternaliteter 2 (Marginal revolution university](https://www.youtube.com/watch?v=Bi2yqqxPAkk)
+* [Almenningens tragedie 1- TED](https://www.youtube.com/watch?v=CxC161GvMPc)
+* [Almenningens tragedie 2 - Marginal revolution university](https://www.youtube.com/watch?v=bs2P0wRod8U)
+* [Eksluderbarhet, rivalitet, og kollektive goder -  Conservation Strategy Fund](https://www.youtube.com/watch?v=E1v5eRs0_fw)
+* [Kollektive goder og beskyttelse fra asteorider -  Marginal revolution university](https://www.youtube.com/watch?v=lLzcW5NG5eA)
+* [Mer om kollektiver goder -  Marginal revolution university](https://www.youtube.com/watch?v=hA2z-X31IvI)
+* [Asymmetrisk informasjon: skjevt utvalg - Marginal revolution university](https://www.youtube.com/watch?v=sXPXpJ5vMnU)
 
 ### F3 - Kostnytteanalyse
 ### F4 - Vurdering
