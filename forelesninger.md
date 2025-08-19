@@ -27,6 +27,13 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [Asymmetrisk informasjon: Skjevt utvalg og moral hasard, INOMICS](https://www.youtube.com/watch?v=39QhA4qCOec)
 
 ### F3 - Kostnytteanalyse
+
+##### Forelesningsnotater
+
+##### Støtteressurser 
+* [Kostnytte-analyse 1 - Conservation Strategy Fund](https://www.youtube.com/watch?v=7tdKkeNClPE&t=4s)
+* [Kostnytte-analyse 2: Diskontering - Conservation Strategy Fund](https://www.youtube.com/watch?v=Mol1yT7tczY)
+* [Kostnytte-analyse 3: Nettonåverdie - Conservation Strategy Fund](https://www.youtube.com/watch?v=2HXwiCoYM8o)
 ### F4 - Vurdering
 ### F5 - Dynamisk effektivitet
 ### F6 - Uttømmingsbare ressurser
@@ -37,7 +44,8 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [Omsettelige utslippsrettigheter 1 - Marginal revolution university](https://www.youtube.com/watch?v=9tUb3MDrgEc)
 * [Omsettelige utslippsrettigheter 2 - Marginal revolution university](https://www.youtube.com/watch?v=oAuPT_wiFgc)
 * [Pigou-skatt - Marginal revolution university](https://www.youtube.com/watch?v=CpVf11f09Pk)
-* 
+
+  
 ### F8 - Klima 1
 ### F9 - Klima 2
 ### F10 - Bærekraftig utvikling og sirkulær økonomi 1
