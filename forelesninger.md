@@ -19,7 +19,9 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [Eksluderbarhet, rivalitet, og kollektive goder -  Conservation Strategy Fund](https://www.youtube.com/watch?v=E1v5eRs0_fw)
 * [Kollektive goder og beskyttelse fra asteorider -  Marginal revolution university](https://www.youtube.com/watch?v=lLzcW5NG5eA)
 * [Mer om kollektiver goder -  Marginal revolution university](https://www.youtube.com/watch?v=hA2z-X31IvI)
-* [Asymmetrisk informasjon: skjevt utvalg - Marginal revolution university](https://www.youtube.com/watch?v=sXPXpJ5vMnU)
+* [Asymmetrisk informasjon: skjevt utvalg 1 - Marginal revolution university](https://www.youtube.com/watch?v=sXPXpJ5vMnU)
+* [Asymmetrisk informasjon: Vann - Marginal revolution university](https://www.youtube.com/watch?v=1jwleEv0MYQ)
+* [Asymmetrisk informasjon: Skjevt utvalg og moral hasard, INOMICS](https://www.youtube.com/watch?v=39QhA4qCOec)
 
 ### F3 - Kostnytteanalyse
 ### F4 - Vurdering
