@@ -27,5 +27,5 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 ## Seminaroppgaver:
 
 ### Seminar 1
-* [Seminaroppgave](https://uit-sok-2302-H25.github.io/assets/s1_sok_2302.pdf)
+* [Seminaroppgave](https://uit-sok-2302-H25.github.io/assets/S1_sok_2302.pdf)
 
