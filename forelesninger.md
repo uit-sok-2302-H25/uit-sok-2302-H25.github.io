@@ -64,6 +64,7 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 #### Forelesningsnotater
 #### Støtteressurser
 * [The Tipping Points of Climate Change — and Where We Stand. Johan Rockström. TED](https://www.youtube.com/watch?v=Vl6VhCAeEfQ)
+* [How scientists calculate climate change - the Economist](https://www.youtube.com/watch?v=fSGorwtY-zM)
 ### F9 - Klima 2
 ### F10 - Bærekraftig utvikling og sirkulær økonomi 1
 
