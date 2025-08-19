@@ -31,7 +31,7 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 ##### Forelesningsnotater
 
 ##### Støtteressurser 
-* [Kostnytte-analyse 1 - Conservation Strategy Fund](https://www.youtube.com/watch?v=7tdKkeNClPE&t=4s)
+* [Kostnytte-analyse 1: Intro - Conservation Strategy Fund](https://www.youtube.com/watch?v=7tdKkeNClPE&t=4s)
 * [Kostnytte-analyse 2: Diskontering - Conservation Strategy Fund](https://www.youtube.com/watch?v=Mol1yT7tczY)
 * [Kostnytte-analyse 3: Nettonåverdie - Conservation Strategy Fund](https://www.youtube.com/watch?v=2HXwiCoYM8o)
 ### F4 - Vurdering
@@ -49,6 +49,12 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 ### F8 - Klima 1
 ### F9 - Klima 2
 ### F10 - Bærekraftig utvikling og sirkulær økonomi 1
+
+#### Forelesningsnotater
+
+#### Støtteressurser
+* [Managing natural resources - Acheiving more with less - OECD](https://www.youtube.com/watch?v=ZERrpFwETgs)
+
 ### F11 - Bærekraftig utvikling og sirkulær økonomi 2
 
 
