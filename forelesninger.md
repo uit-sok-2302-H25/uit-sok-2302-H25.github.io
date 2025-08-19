@@ -1,3 +1,4 @@
+{% include navbar.html %}{% include top-box.html %}
 # Forelesningsnotater og seminaroppgaver
 På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil også legge inn lenker til ressurser som vi tenker kan være til hjelp for dere. Siden oppdateres fortløpende.
 
