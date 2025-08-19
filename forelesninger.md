@@ -7,7 +7,10 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 ### [F1 - Introduksjon til kurset](https://uit-sok-2302-H25.github.io/assets/F1_sok2302_h25.pdf)
 
 ### F2 - Markedssvikt
+
 #### Forelesningsnotater
+* [F2 - Markedssvikt](https://uit-sok-2302-H25.github.io/assets/F2_sok2302_h25.pdf)
+
 #### Støtteressurser (youtube-filmer)
 * [Almenningens tragedie](https://www.youtube.com/watch?v=CxC161GvMPc)
 * [Eksternaliteter](https://www.youtube.com/watch?v=tVX_BSV-h-E)
