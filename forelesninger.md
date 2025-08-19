@@ -12,8 +12,9 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 * [F2 - Markedssvikt](https://uit-sok-2302-H25.github.io/assets/F2_sok2302_h25.pdf)
 
 #### Støtteressurser (youtube-filmer)
+* [Eksternaliteter 1](https://www.youtube.com/watch?v=tVX_BSV-h-E)
+* [Eksternaliteter 2](https://www.youtube.com/watch?v=Bi2yqqxPAkk)
 * [Almenningens tragedie](https://www.youtube.com/watch?v=CxC161GvMPc)
-* [Eksternaliteter](https://www.youtube.com/watch?v=tVX_BSV-h-E)
 * [Eksluderbarhet, rivalitet, og kollektive goder](https://www.youtube.com/watch?v=E1v5eRs0_fw)
 * [Asymmetrisk informasjon - skjevt utvalg](https://www.youtube.com/watch?v=sXPXpJ5vMnU)
 
