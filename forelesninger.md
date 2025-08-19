@@ -4,8 +4,11 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 
 ## Forelesningsnotater og ressurser:
 
-### [F1 - Introduksjon til kurset](https://uit-sok-2302-H25.github.io/assets/F1_sok2302_h25.pdf)
-
+### F1 - Introduksjon til kurset
+#### Forelesningsnotater
+* [F1 - Introduksjon til kurset](https://uit-sok-2302-H25.github.io/assets/F1_sok2302_h25.pdf)
+#### Støtteressurser
+* [Kræsj-kurs i miljøøkonomi - CrashCourse](https://www.youtube.com/watch?v=BlAfFgKQ5r8)
 ### F2 - Markedssvikt
 
 #### Forelesningsnotater
@@ -28,6 +31,13 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 ### F5 - Dynamisk effektivitet
 ### F6 - Uttømmingsbare ressurser
 ### F7 - Kontroll av forurrensing
+
+#### Støtteressurser (youtube-filmer)
+* [The hidden cost of pollution - Marginal revolutiin university](https://www.youtube.com/watch?v=JLHXYTbSQZY)
+* [Omsettelige utslippsrettigheter 1 - Marginal revolution university](https://www.youtube.com/watch?v=9tUb3MDrgEc)
+* [Omsettelige utslippsrettigheter 2 - Marginal revolution university](https://www.youtube.com/watch?v=oAuPT_wiFgc)
+* [Pigou-skatt - Marginal revolution university](https://www.youtube.com/watch?v=CpVf11f09Pk)
+* 
 ### F8 - Klima 1
 ### F9 - Klima 2
 ### F10 - Bærekraftig utvikling og sirkulær økonomi 1
