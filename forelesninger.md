@@ -1,6 +1,6 @@
 {% include navbar.html %}{% include top-box.html %}
-# Forelesningsnotater og seminaroppgaver
-På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil også legge inn lenker til ressurser som vi tenker kan være til hjelp for dere. Siden oppdateres fortløpende.
+# Forelesningsnotater og støtteressurser
+På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi tenker kan være til hjelp for dere. Siden oppdateres fortløpende.
 
 ## Forelesningsnotater og ressurser:
 
@@ -75,9 +75,4 @@ På denne siden vil vi laste opp forelesningsnotater og seminaroppgaver. Vi vil 
 
 ### F11 - Bærekraftig utvikling og sirkulær økonomi 2
 
-
-## Seminaroppgaver:
-
-### Seminar 1
-* [Seminaroppgave](https://uit-sok-2302-H25.github.io/assets/S1_sok_2302.pdf)
 
