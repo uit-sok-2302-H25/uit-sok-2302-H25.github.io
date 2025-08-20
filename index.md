@@ -10,7 +10,8 @@ Forelesnings- og seminarplanene inneholder informasjon om tidspunkt, tema, fagl√
 Innleveringsplanen gir oppgaver, frister og ressurser i forbindelse med obligatoriske innleveringer.  
 
 - [Forelesnings- og seminarplan](https://uit-sok-2302-h25.github.io/forelesningsplan.html){:target="blank"}
-- [Forelesningsnotater og seminaroppgaver](https://uit-sok-2302-h25.github.io/forelesninger.html){:target="blank"}
+- [Forelesningsnotater og st√∏tteressurser](https://uit-sok-2302-h25.github.io/forelesninger.html){:target="blank"}
+- [seminaroppgaver](https://uit-sok-2302-h25.github.io/seminaroppgaver.html){:target="blank"}
 - [Innleveringsplan og innleveringsoppgaver](https://uit-sok-2302-h25.github.io/mappeinnleveringer.html){:target="blank"}
 - [Timeplan](https://tp.educloud.no/uit/app/schedule?semester=25h&scheduleType=course&filterOpen=true&summary=true&tab=calendar&course=SOK-2302%C2%A41){:target="blank"}
 
