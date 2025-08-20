@@ -11,7 +11,7 @@ Innleveringsplanen gir oppgaver, frister og ressurser i forbindelse med obligato
 
 - [Forelesnings- og seminarplan](https://uit-sok-2302-h25.github.io/forelesningsplan.html){:target="blank"}
 - [Forelesningsnotater og støtteressurser](https://uit-sok-2302-h25.github.io/forelesninger.html){:target="blank"}
-- [seminaroppgaver](https://uit-sok-2302-h25.github.io/seminaroppgaver.html){:target="blank"}
+- [Seminaroppgaver](https://uit-sok-2302-h25.github.io/seminarer.html){:target="blank"}
 - [Innleveringsplan og innleveringsoppgaver](https://uit-sok-2302-h25.github.io/mappeinnleveringer.html){:target="blank"}
 - [Timeplan](https://tp.educloud.no/uit/app/schedule?semester=25h&scheduleType=course&filterOpen=true&summary=true&tab=calendar&course=SOK-2302%C2%A41){:target="blank"}
 
