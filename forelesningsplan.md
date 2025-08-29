@@ -8,7 +8,7 @@ Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.ui
 |19. Aug.        |  10:15 - 12:00 |Forelesning     | Introduksjon til kurset           |TL: kap 1           |
 |21. Aug.        |  08:15 - 10:00 |Forelesning      | Introduksjon til faget - Eiendomsrettigheter, eksternaliteter, og miljøproblemer|TL: kap 2       |
 |26. Aug.        |  10:15 - 12:00 |Seminar          | Eiendomsrettigheter, eksternaliteter, og miljøproblemer |TL: kap 2, SØ: kap 4-5     |
-|29. Aug.        |  08:15 - 11:00 |Forelesning      | Kostnytte analyse       |TL: kap 3    |
+|29. Aug.        |  09:15 - 11:00 |Forelesning      | Kostnytte analyse       |TL: kap 3    |
 |02. Sept.        |  10:15 - 12:00 |Forelesning          | Vurdering av miljø       |TL: kap 4    |
 |05. Sept.        |  10:15 - 12:00 |Seminar     | Kostnytte og vurdering av miljø       |TL: kap 3 og 4    |
 |09. Sept.         |  10:15 - 12:00 |Forelesning      | Dynamisk effektivitet      |TL: kap 5    |
