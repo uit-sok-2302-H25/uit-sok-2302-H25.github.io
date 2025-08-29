@@ -28,7 +28,8 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 * [Asymmetrisk informasjon: Skjevt utvalg og moral hasard, INOMICS](https://www.youtube.com/watch?v=39QhA4qCOec)
 
 ### F3 - Kostnytteanalyse
-
+* [F3 Nytte-Kostnadsanalyse](https://github.com/uit-sok-2302-H25/uit-sok-2302-H25.github.io/blob/main/assets/F3_SOK2302_H25.pptx)
+* [F3 Nytte-Kostnadsanalyse-R-Kode](https://github.com/uit-sok-2302-H25/uit-sok-2302-H25.github.io/blob/main/assets/F3_SOK2302_H25.R)
 ##### Forelesningsnotater
 
 ##### Støtteressurser 
