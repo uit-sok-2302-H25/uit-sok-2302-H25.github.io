@@ -41,6 +41,8 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 
 #### Forelesningsnotater
 
+[F4 Verdsetting av miljø](assets/F4_SOK2302_H25.pptx)
+
 #### Støtteressurser
 * [Introduksjon til vurdering - Conservation Strategy Fund](https://www.youtube.com/watch?v=0CHIs9dLvxA)
 * [Verdier knyttet til økosystemer - Conservation Strategy Fund](https://www.youtube.com/watch?v=q8AZHtF2f50)
