@@ -36,6 +36,7 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 * [Kostnytte-analyse 1: Intro - Conservation Strategy Fund](https://www.youtube.com/watch?v=7tdKkeNClPE&t=4s)
 * [Kostnytte-analyse 2: Diskontering - Conservation Strategy Fund](https://www.youtube.com/watch?v=Mol1yT7tczY)
 * [Kostnytte-analyse 3: Nettonåverdie - Conservation Strategy Fund](https://www.youtube.com/watch?v=2HXwiCoYM8o)
+* [Kostnytte-analyse 4: Social Cost of Carbon](https://www.youtube.com/watch?v=VXLzaRoxJK4)
 
 ### F4 - Vurdering av miljøgoder
 
