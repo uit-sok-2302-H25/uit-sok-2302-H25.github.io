@@ -53,6 +53,11 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 
   
 ### F5 - Dynamisk effektivitet
+
+#### Forelesningsnotater
+
+* [F4 - Dynamisk effektivitet](assets/F5_SOK2302_H25_dynamisk_effektivitet.pptx)
+
 ### F6 - Uttømmingsbare ressurser
 ### F7 - Kontroll av forurrensing
 
