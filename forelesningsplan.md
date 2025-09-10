@@ -15,6 +15,7 @@ Planen er preliminær og kan oppdateres. For oppdatert timeplan, se [timeplan.ui
 |12. Sept.         |  10:15 - 12:00 |Forelesning      | Uttømningsbare ressurser       |TL: kap 6    |
 |16. Sept.         |  10:15 - 12:00 |Seminar     | Dynamisk effektivitet/uttømningsbare ressurser     |TL: kap 5 og 6    |
 |23. Sept.         |  10:15 - 12:00 |Forelesning      | Forurensing       |TL: kap 7    |
+|25. Sept.         |  10:15 - 12:00 |Forelesning      | Forurensing forts       |TL: kap 7    |
 |30. Sept.        |  10:15 - 12:00 |Seminar      | Forurensing       |TL: kap 7    |
 |14. Okt.        |  10:15 - 12:00 |Forelesning      | Klimaendringer 1      |TL: kap 11, IPPC    |
 |17. Okt.        |  10:15 - 12:00 |Forelesning      | Tilpasning - Flom, skogbrann og vannnmangel       |TL: kap 14, IPCC    |
