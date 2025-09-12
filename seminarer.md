@@ -11,6 +11,7 @@ På denne siden vil vi legge opp seminaroppgaver og eventuelle løsninger til op
 * [S2 Kostnytte og vurdering av miljø - Seminaroppgave](assets/S2_SOK2302_H25.qmd)
 
 ## S3
+* [S3 Dynamiske effekter og ikke fornybare ressurser - Seminaroppgave](assets/S3_SOK2302_H25.qmd)
 
 ## S4 - Kontroll av forurensning
 
