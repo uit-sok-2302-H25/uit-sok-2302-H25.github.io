@@ -6,4 +6,12 @@ På denne siden vil vi legge opp seminaroppgaver og eventuelle løsninger til op
 
 ## S1 - Markedssvikt
 * [S1 Markedssvikt - Seminaroppgave](https://uit-sok-2302-H25.github.io/assets/S1_sok_2302.pdf)
+
+## S2 - Kostnytte og vurdering av miljø
 * [S2 Kostnytte og vurdering av miljø - Seminaroppgave](assets/S2_SOK2302_H25.qmd)
+
+## S3
+
+## S4 - Kontroll av forurensning
+
+* [S4 - Kontroll av forurensning](https://colab.research.google.com/drive/1QnH9IIC06KHd46ha2UAjOZUKoqyFnc0d?usp=sharing)
