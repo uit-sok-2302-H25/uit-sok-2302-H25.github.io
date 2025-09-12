@@ -43,7 +43,7 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 #### Forelesningsnotater
 
 * [F4 - Verdsetting av miljø](assets/F4_SOK2302_H25.pptx)
-* [F4 - Matematikk](assets/Matematikk Sok -2302 F5 .pdf)
+
 #### Støtteressurser
 * [Introduksjon til vurdering - Conservation Strategy Fund](https://www.youtube.com/watch?v=0CHIs9dLvxA)
 * [Verdier knyttet til økosystemer - Conservation Strategy Fund](https://www.youtube.com/watch?v=q8AZHtF2f50)
@@ -54,11 +54,17 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
   
 ### F5 - Dynamisk effektivitet
 
+
 #### Forelesningsnotater
 
-* [F4 - Dynamisk effektivitet](assets/F5_SOK2302_H25_dynamisk_effektivitet.pptx)
+* [F5 - Dynamisk effektivitet](assets/F5_SOK2302_H25_dynamisk_effektivitet.pptx)
+* [F4 - Matematikk](https://github.com/uit-sok-2302-H25/uit-sok-2302-H25.github.io/blob/aba588c16195874e995ffe2fcdb6602240dc2f02/assets/Matematikk%20Sok%20-2302%20F5%20.pdf)
 
 ### F6 - Uttømmingsbare ressurser
+
+* [F6 - Uttømmingsbare ressurser](assets/F6_SOK2302_H25_ikke_fornybare_resurser.pptx)
+* [F6 - R kode](assets/F6_SOK2302_H25.R)
+
 ### F7 - Kontroll av forurrensing
 
 #### Støtteressurser (youtube-filmer)
