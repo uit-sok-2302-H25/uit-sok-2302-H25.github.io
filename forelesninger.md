@@ -58,7 +58,7 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 #### Forelesningsnotater
 
 * [F5 - Dynamisk effektivitet](assets/F5_SOK2302_H25_dynamisk_effektivitet.pptx)
-* [F4 - Matematikk](https://github.com/uit-sok-2302-H25/uit-sok-2302-H25.github.io/blob/aba588c16195874e995ffe2fcdb6602240dc2f02/assets/Matematikk%20Sok%20-2302%20F5%20.pdf)
+* [F5 - Matematikk](https://github.com/uit-sok-2302-H25/uit-sok-2302-H25.github.io/blob/aba588c16195874e995ffe2fcdb6602240dc2f02/assets/Matematikk%20Sok%20-2302%20F5%20.pdf)
 
 ### F6 - Uttømmingsbare ressurser
 
