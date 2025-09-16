@@ -1,0 +1,143 @@
+---
+title: "Seminar 3: Dynamiske effekter og ikke fornybare ressurser"
+subtitle: "Sok-2302 h25"
+author: "Eirik Eriksen Heen & ChatGPT"
+date: "`r Sys.Date()`"
+date-format: DD. MMM YYYY
+format: html
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+  error: false
+  freeze: auto
+  code-overflow: wrap # Pakker kode som er for lang for linjen
+---
+
+```{r start, include = FALSE}
+##### Start up #####
+rm(list = ls()) # Empties all data
+
+options(scipen=10) # writes 10 scipens before scientific script
+options(digits=10) # writes up to 10 digits
+
+
+# loading packages
+library(tidyverse)
+library(mosaic)
+library(readxl)
+library(gt)
+
+# Kode for a kunne bruke norske bokstaver
+Sys.setlocale(locale="no_NO")
+
+```
+
+## Seminaroppgaver Kapittel 5 & 6
+
+## Oppgave 1 – To-periode-modellen
+
+Anta at en ressurs kan utvinnes i to perioder. Etterspørselskurven er:\
+\[ P = 12 - 0.5Q \]\
+Marginalkostnaden (MC) er konstant på 2.\
+Totalt ressurslager: 12 enheter.\
+Diskonteringsrente: 10 %.
+
+1.  Finn likevektsforbruk i de to periodene.\
+2.  Beregn prisen i hver periode.\
+3.  Hva er marginal user cost (MUC) i hver periode?\
+4.  Hvordan endres fordelingen mellom periodene dersom diskonteringsrenten økes til 20 %?
+
+------------------------------------------------------------------------
+
+### Oppgave 2: Statisk vs. dynamisk effektivitet
+
+Gi eksempler fra norsk ressursforvaltning på: 1. Et problem som passer best med **statisk effektivitet**. 2. Et problem som passer best med **dynamisk effektivitet**.\
+Forklar hvorfor.
+
+------------------------------------------------------------------------
+
+### Oppgave 3: To-periodemodellen
+
+Anta at en ikke-fornybar ressurs:
+
+-   Marginalkostnad på 100
+
+-   Etterspørsel gitt ved P = 10 000 – q
+
+-   Totalt ressurslager er 14 000 enheter.
+
+1.  Finn den optimale fordelingen mellom periode 1 og 2 **uten diskontering**.
+2.  For likevektsløsningen, beregn:
+    1.  Pris i hver periode
+    2.  Marginal User Cost (MUC) i hver periode
+    3.  Konsumentoverskudd i hver periode
+    4.  Hva er produsentoverskuddet i hver periode?
+    5.  Hva er totalt samfunnsøkonomisk overskudd i hver periode?
+3.  Undersøk effekten av å øke uttaket i periode 1 med en enhet (dvs. ($q_1^*+1,q_2^*-1$)):
+    1.  Hva skjer med det samfunnsøkonomiske oversuddet i periode 1 og 2?
+    2.  Ser du sammenheng mellom disse endringene i samfunnsøkonomiskoversud og MUC?
+4.  Hva skjer med fordelingen hvis vi innfører en diskonteringsrente på 40 %?
+5.  Visualiser resultatene i en figur, velg med eller uten diskontering.
+6.  Sammenlikn MUC med og uten diskontering.
+
+------------------------------------------------------------------------
+
+### Oppgave 4: Marginal User Cost (MUC)
+
+a)  Forklar med egne ord hva MUC er.\
+b)  Bruk to-periodemodellen: tegn en figur der du viser hvordan MUC kommer inn i prisen (P = MC + MUC).\
+c)  Diskuter: hvorfor stiger MUC når marginalkostnaden er konstant, men synker når marginalkostnaden øker med uttak?
+
+------------------------------------------------------------------------
+
+### Oppgave 5: Oljefondet og Hartwick’s regel
+
+1.  På hvilken måte kan Statens pensjonsfond utland (Oljefondet) ses som et eksempel på Hartwick’s regel?\
+2.  Diskuter om dette er et eksempel på **svak** eller **sterk** bærekraft.\
+3.  Hva kunne være et eksempel på en ressurs som krever sterk bærekraft?
+
+------------------------------------------------------------------------
+
+### Oppgave 6: Overgang til substitutter
+
+Se på tre historiske eller framtidige overganger: - Fra hvalolje til petroleum\
+- Fra kull til olje\
+- Fra fossile brensler til sol/vind
+
+1.  Diskuter hvilke faktorer som bestemmer tidspunktet for overgang.\
+2.  Hvilke paralleller kan vi trekke til dagens grønne omstilling?
+
+------------------------------------------------------------------------
+
+### Oppgave 7: Økende marginalkostnad
+
+Anta at en ressurs har marginalkostnad som stiger med uttak.\
+1. Hvorfor vil ikke hele ressursen nødvendigvis utvinnes?\
+2. Forklar hvorfor MUC faller mot null når overgang til en fornybar substitutt nærmer seg.\
+3. Diskuter et eksempel (f.eks. malmutvinning eller skiferolje).
+
+------------------------------------------------------------------------
+
+### Oppgave 8: Utforskning og teknologisk fremgang
+
+1.  Bruk eksemplet med Nordsjøoljen eller pelletisering av jernmalm. Hvordan endret nye funn eller teknologi ressursbanen?\
+2.  Diskuter: Kan økende forbruk over tid bety at ressursene forvaltes ineffektivt? Hvorfor / hvorfor ikke?
+
+------------------------------------------------------------------------
+
+### Oppgave 9: Markedsallokering og miljøkostnader
+
+Anta at utvinning av en ressurs gir en ekstern miljøkostnad på 1 kr/enhet.\
+1. Hvordan endres effektiv pris og uttak hvis denne kostnaden internaliseres?\
+2. Diskuter eksempler fra Norge (f.eks. gruveavfall, dagbrudd).\
+3. Hvilken rolle bør staten spille for å sikre dynamisk effektivitet?
+
+------------------------------------------------------------------------
+
+### Diskusjonsspørsmål
+
+-   Skal miljøprosjekter vurderes med lavere diskonteringsrente enn andre prosjekter?\
+-   Er dagens forvaltning av oljefondet rettferdig for fremtidige generasjoner?\
+-   Hvordan kan vi sikre en jevn og bærekraftig overgang til fornybare ressurser?
