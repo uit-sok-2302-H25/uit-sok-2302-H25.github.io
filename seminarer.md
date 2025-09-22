@@ -12,6 +12,7 @@ På denne siden vil vi legge opp seminaroppgaver og eventuelle løsninger til op
 
 ## S3
 * [S3 Dynamiske effekter og ikke fornybare ressurser - Seminaroppgave](assets/S3_SOK2302_H25.qmd)
+* [S3 Løsningsforslag](assets/S3_SOK2302_H25_Losning.qmd)
 
 ## S4 - Kontroll av forurensning
 
