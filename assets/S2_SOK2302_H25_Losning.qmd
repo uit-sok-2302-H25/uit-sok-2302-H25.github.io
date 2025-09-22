@@ -1,0 +1,969 @@
+---
+title: "Seminar 2: Kostnytte og vurdering av miljø"
+subtitle: "Sok-2302 h25"
+author: "Eirik Eriksen Heen & ChatGPT"
+date: "`r Sys.Date()`"
+date-format: DD. MMM YYYY
+format: html
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+  error: false
+  freeze: auto
+  code-overflow: wrap # Pakker kode som er for lang for linjen
+---
+
+```{r start, include = FALSE}
+##### Start up #####
+rm(list = ls()) # Empties all data
+
+options(scipen=10) # writes 10 scipens before scientific script
+options(digits=10) # writes up to 10 digits
+
+
+# loading packages
+library(tidyverse)
+library(mosaic)
+library(readxl)
+
+# Kode for a kunne bruke norske bokstaver
+Sys.setlocale(locale="no_NO")
+
+```
+
+## Spørreskjema
+
+Fyll ut spørreskjemaet [her](https://nettskjema.no/a/542481). Eller går dirkete til URLen: <https://nettskjema.no/a/542481>.
+
+```{r, warning=FALSE, error=FALSE}
+
+#sporre_under = read_excel("Sherpatrappsurvey.xlsx")
+
+#save(sporre_under, file = "sporre_under.Rdata")
+
+# load("sporre_under.Rdata")
+
+
+# Henter inn survey dataen fra nett
+load(url("https://github.com/uit-sok-2302-H25/uit-sok-2302-H25.github.io/raw/refs/heads/main/assets/sporre_under.Rdata"))
+
+
+#### Endrer variablene slik at de er lettere å tolke
+# lager bruk om til factor
+sporre_under = sporre_under %>%
+  mutate(Bruk = factor(Bruk, levels = c("Aldri.",
+                                        "1-2 gang i året.", 
+                                        "Fler enn 2 ganger i året men mindre enn 1 gang i måneden.", 
+                                        "En eller flere ganger i måneden men mindre enn en gang i uken.", 
+                                        "En eller flere ganger i uken." )  
+                       )) %>%
+   mutate(
+    Bruk = fct_recode(
+      Bruk,
+      "Aldri"     = "Aldri.",
+      "En gang årlig"     = "1-2 gang i året.",
+      "Årlig"     = "Fler enn 2 ganger i året men mindre enn 1 gang i måneden.",
+      "Månedlig"  = "En eller flere ganger i måneden men mindre enn en gang i uken.",
+      "Ukentlig"  = "En eller flere ganger i uken."
+    )
+  )
+
+sporre_under = sporre_under %>%
+  mutate(Forsøppling = factor(Forsøppling, 
+                              levels = c("Ingen betydning",
+                                         "Liten betydning",
+                                         "Middels betydning",
+                                         "Stor betydning",
+                                         "Svært stor betydning")
+  ))
+
+sporre_under = sporre_under %>%
+  mutate(Verdsetting = factor(Verdsetting, 
+                              levels = c("Svært lett",
+                                         "Ganske lett",
+                                         "Nøytral",
+                                         "Ganske vanskelig",
+                                         "Svært vanskelig")
+  ))
+
+# Sjekker strukturen i dataene
+str(sporre_under)
+
+
+```
+
+### Hvor ofter bruker du friluftsområder i Troms?
+
+```{r, warning=FALSE, error=FALSE}
+
+# Fordeling av bruk
+ggplot(sporre_under, aes(x = Bruk)) +
+  geom_bar(fill = "#2C7BB6", color = "white", width = 0.7) +   # Blå fyllfarge, hvit kant
+  labs(
+    title = "Fordeling av bruk",
+    x = "Bruk",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +                              # Rent tema
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),     # Midtstilt tittel
+    axis.text.x = element_text(angle = 45, hjust = 1)          # Skrå x-labels hvis mange kategorier
+  )
+
+```
+
+### Men hvor viktig er forsøpling for deg?
+
+```{r, warning=FALSE, error=FALSE}
+# Fordeling av forsopling
+ggplot(sporre_under, aes(x = Forsøppling)) +
+  geom_bar(fill = "#D7191C", color = "white", width = 0.7) +
+  labs(
+    title = "Fordeling av forsøpling",
+    x = "Forsøppling",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+```
+
+### Hvor lett eller vanskelig er det å verdsette friluftsområder i Troms?
+
+```{r, warning=FALSE, error=FALSE}
+# Hvor mye er dere villig til å betale totalt
+sum(sporre_under$`Willingness to Pay`, na.rm = TRUE)
+
+# summerer villighet til a betale
+summary(sporre_under$`Willingness to Pay`)
+
+ggplot(sporre_under, aes(x = `Willingness to Pay`)) +
+  geom_histogram(
+    bins = 15,                   # juster gjerne antall bins
+    fill = "#2C7BB6",            # pen blåfarge
+    color = "white"              # hvite streker mellom stolper
+  ) +
+  labs(
+    title = "Fordeling av villighet til å betale",
+    x = "Villighet til å betale",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+```
+
+### Hvor mye er du villig til å akseptere i kompensasjon for at friluftsområder i Troms blir ødelagt?
+
+```{r, warning=FALSE, error=FALSE}
+# total sum av villighet til a akseptere
+sum(sporre_under$`Willingness to Accept`, na.rm = TRUE)
+
+# summerer villighet til a akseptere
+summary(sporre_under$`Willingness to Accept`)
+
+
+ggplot(sporre_under, aes(x = `Willingness to Accept`)) +
+  geom_histogram(
+    bins = 15,                   # juster gjerne antall bins
+    fill = "#D7191C",            # pen rød farge
+    color = "white"              # hvite streker mellom stolper
+  ) +
+  labs(
+    title = "Fordeling av villighet til å akseptere",
+    x = "Villighet til å akseptere",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+```
+
+### Sammenligning av WTP og WTA
+
+```{r, warning=FALSE, error=FALSE}
+# Sammenligning av WTP og WTA
+
+sporre_long <- sporre_under %>%
+  pivot_longer(cols = c(`Willingness to Pay`, `Willingness to Accept`),
+               names_to = "Type", values_to = "Verdi")
+
+ggplot(sporre_long, aes(x = Verdi, fill = Type)) +
+  geom_histogram(position = "identity", alpha = 0.5, bins = 20, color = "white") +
+  scale_fill_manual(values = c("Willingness to Pay" = "#2C7BB6",
+                               "Willingness to Accept" = "#D7191C")) +
+  labs(
+    title = "Fordeling av WTP og WTA",
+    x = "Verdi",
+    y = "Antall",
+    fill = "Type"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+# forsjellen mellom WTP og WTA
+
+sporre_under <- sporre_under %>%
+  mutate(diff = `Willingness to Accept` - `Willingness to Pay`)
+
+ggplot(sporre_under, aes(x = diff)) +
+  geom_histogram(bins = 20, fill = "#FDAE61", color = "white") +
+  labs(
+    title = "Forskjell mellom WTA og WTP",
+    x = "WTA - WTP",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+
+
+```
+
+#### Hvor skal WTP og WTA være den samme for økonomer.
+
+I utgangspunktet skal willingness to pay (WTP) og willingness to accept (WTA) være like for samme individ dersom markedet fungerer friksjonsfritt og preferansene er stabile. Hvis en person er indifferent mellom å ha en vare eller ikke, vil den høyeste prisen hun er villig til å betale for varen (WTP) være lik den laveste prisen hun er villig til å akseptere for å gi fra seg varen (WTA). Dette følger av grunnleggende mikroøkonomisk teori om konsistens i preferanser og nyttemaksimering.
+
+Empirisk finner man imidlertid ofte at WTA er betydelig høyere enn WTP. Dette omtales gjerne som endowment-effekten, hvor eierskap i seg selv øker verdien av en vare. Psykologiske faktorer som tapsskjevhet (loss aversion) fra prospektteorien gjør at mennesker opplever tap som mer smertefulle enn gevinster av tilsvarende størrelse er gledelige. Dermed krever de en høyere kompensasjon for å gi opp noe de eier (WTA) enn de er villige til å betale for å få det samme (WTP). I tillegg kan faktorer som usikkerhet, mangel på perfekte markeder og emosjonell tilknytning til varer bidra til dette avviket.
+
+### Hva er eksistens verdien
+
+Eksistensverdi er den verdien individer tillegger et gode eller en ressurs uavhengig av om de noen gang vil bruke den direkte. I miljø- og ressursøkonomi brukes begrepet ofte om naturressurser, som for eksempel vern av truede arter eller bevaring av en nasjonalpark. Selv personer som aldri planlegger å besøke parken kan oppleve nytte av å vite at den finnes, og være villige til å betale for å bevare den. Eksistensverdi er dermed en del av et bredere begrep, ikke-bruksverdier (non-use values), som også kan inkludere opsjonsverdi (verdien av å ha muligheten til å bruke noe i fremtiden) og arveverdi (verdien av å bevare noe for kommende generasjoner).
+
+```{r, warning=FALSE, error=FALSE}
+# hvar er total eksistensverdi i klassen
+sum(sporre_under$Eksistensverdi, na.rm = TRUE)
+
+# summry av eksistensverdi
+summary(sporre_under$Eksistensverdi)
+
+
+# histogram av eksistensverdi
+ggplot(sporre_under, aes(x = Eksistensverdi)) +
+  geom_histogram(
+    bins = 15,                   # juster gjerne antall bins
+    fill = "#1A9641",            # pen grønn farge
+    color = "white"              # hvite streker mellom stolper
+  ) +
+  labs(
+    title = "Fordeling av eksistensverdi",
+    x = "Eksistensverdi",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+```
+
+### Bequest-verdi
+
+Bequest-verdi handler om den verdien mennesker tillegger det å bevare ressurser eller goder for fremtidige generasjoner. Selv om man kanskje ikke selv vil bruke en nasjonalpark, en fiskeart eller et kulturminne, kan man oppleve nytte av å vite at ens barn eller barnebarn får mulighet til å oppleve det. Bequest-verdi er derfor en del av de såkalte ikke-bruksverdiene i miljøøkonomi, sammen med blant annet eksistensverdi og opsjonsverdi. Den fanger opp et intergenerasjonelt perspektiv på velferd, der folks betalingsvillighet ikke bare reflekterer egen bruk, men også ønsket om å overføre ressurser og naturarv videre.
+
+```{r, warning=FALSE, error=FALSE}
+# hvar er total bequest verdi i klassen
+sum(sporre_under$'Bequest-verdi', na.rm = TRUE)
+
+# summry av bequest-verdi
+summary(sporre_under$'Bequest-verdi')
+
+# histogram av bequest-verdi
+ggplot(sporre_under, aes(x = `Bequest-verdi`)) +
+  geom_histogram(
+    bins = 15,                   # juster gjerne antall bins
+    fill = "#762A83",            # pen lilla farge
+    color = "white"              # hvite streker mellom stolper
+  ) +
+  labs(
+    title = "Fordeling av bequest-verdi",
+    x = "Bequest-verdi",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+```
+
+### Villigeht til å betale for leilighet
+
+```{r, warning=FALSE, error=FALSE}
+
+# Summary willingness to pay for apartment rent område
+summary(sporre_under$'Leilighet - vedlikeholdt område')
+
+# Summary willingness to pay for apartment ikke rent område
+summary(sporre_under$'Leilighet - ikke vedlikeholdt område')
+
+# Histogram av willingness to pay for apartment rent område
+ggplot(sporre_under, aes(x = `Leilighet - vedlikeholdt område`)) +
+  geom_histogram(
+    bins = 15,                   # juster gjerne antall bins
+    fill = "#E69F00",            # pen oransje farge
+    color = "white"              # hvite streker mellom stolper
+  ) +
+  labs(
+    title = "Fordeling av villighet til å betale for leilighet i vedlikeholdt område",
+    x = "Villighet til å betale",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+# Histogram av willingness to pay for apartment ikke rent område
+ggplot(sporre_under, aes(x = `Leilighet - ikke vedlikeholdt område`)) +
+  geom_histogram(
+    bins = 15,                   # juster gjerne antall bins
+    fill = "#56B4E9",            # pen blå farge
+    color = "white"              # hvite streker mellom stolper
+  ) +
+  labs(
+    title = "Fordeling av villighet til å betale for leilighet i ikke vedlikeholdt område",
+    x = "Villighet til å betale",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+# forsjellen mellom senarioene
+
+sporre_under <- sporre_under %>%
+  mutate(diff2 = `Leilighet - vedlikeholdt område` - `Leilighet - ikke vedlikeholdt område`)
+
+ggplot(sporre_under, aes(x = diff2)) +
+  geom_histogram(bins = 20, fill = "#FDAE61", color = "white") +
+  labs(
+    title = "Forskjell mellom rent og ikke rent område",
+    x = "Hedonisk pris på rent område",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+```
+
+### Reisekost
+
+```{r, warning=FALSE, error=FALSE}
+# Summary av reisekost
+summary(sporre_under$Resisekost)
+# Histogram av reisekost
+ggplot(sporre_under, aes(x = Resisekost)) +
+  geom_histogram(
+    bins = 15,                   # juster gjerne antall bins
+    fill = "#009E73",            # pen grønn farge
+    color = "white"              # hvite streker mellom stolper
+  ) +
+  labs(
+    title = "Fordeling av reisekost",
+    x = "Reisekost",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+```
+
+### Hvor vanskelig er det er det å verdsette friluftsområder i Troms?
+
+```{r, warning=FALSE, error=FALSE}
+# Fordeling av verdsetting
+ggplot(sporre_under, aes(x = Verdsetting)) +
+  geom_bar(fill = "#F0E442", color = "white", width = 0.7) +   # Gul fyllfarge, hvit kant
+  labs(
+    title = "Fordeling av verdsetting",
+    x = "Verdsetting",
+    y = "Antall"
+  ) +
+  theme_minimal(base_size = 14) +                              # Rent tema
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),     # Midtstilt tittel
+    axis.text.x = element_text(angle = 45, hjust = 1)          # Skrå x-labels hvis mange kategorier
+  )
+```
+
+## Seminaroppgaver – Kapittel 3
+
+### Oppgave 1 – Gjennomføring av prosjekt
+
+Et nytt miljøtiltak gir følgende effekter (alle verdier i millioner kroner):
+
+-   Nytte (kortere reisetid): 50
+-   Helsegevinster: 20
+-   Inntektsøkning: 10
+-   Kostnader (drift og investering): 70
+-   Miljøkostnader: 5
+
+a)  Beregn total nytte, totale kostnader og netto nytte.
+b)  Skal tiltaket gjennomføres? Begrunn.
+c)  Hvordan ville svaret endret seg hvis man bare ser på **B/C-forholdet**?
+d)  Hva er den maksimale kostnaden tiltaket kan ha for at det fortsatt skal være lønnsomt?
+
+```{r, warning=FALSE, error=FALSE}
+# beregner nytte, kost og netto nytte
+benefit = 50 + 20 + 10
+benefit
+kost = 70+5
+kost
+# Netto nytte
+benefit - kost
+# B/C ratio
+benefit / kost
+```
+
+b)  Nytte er høyere enn kostnader prsjektet bør gjennomføres.
+c)  B/C forholdet er 1.066, prosjektet bør gjennomføres.
+d)  Maksimal kostnad for at prosjktet går i null er 80.
+
+------------------------------------------------------------------------
+
+### Oppgave 2 – Marginal nytte og kostnad
+
+Anta at marginal nytte (MB) og marginal kostnad (MC) for å bevare en elv er gitt ved:
+
+$MB = 100 - 2Q, \quad MC = 20 + Q$
+
+a)  Finn det samfunnsøkonomiske optimale nivået $(Q^*)$ for bevaring.
+b)  Tegn MB- og MC-kurvene og marker optimum.
+c)  Hva er den totale netto nytten (arealet mellom kurvene)?
+
+```{r }
+# Setter opp en dataframe med x-verdier, x i dette tilfellet er Q
+x = seq(0,50, by = 0.1)
+
+# lager en dataframe for alle verdier
+df = data.frame(x)
+df <- df %>% 
+  mutate(mb = 100 - 2*x) %>%  # MB funksjon for hver x
+  mutate(mc = 20 +x) %>% # MC funksjon for hver x
+  mutate(nettbenefitt = mb - mc) %>% # netto nytte for hver x
+  mutate(diff_abs = abs(nettbenefitt)) 
+
+# finner for hvilken x, diff_abs er lavest. Eller den minste avstanden mellom mb og mc, som er optimum. 
+opt_x <- df %>%
+  slice_min(order_by = diff_abs, n = 1) %>%
+  pull(x)
+
+# finner hvilken pris som tilhører optimal x
+opt_y <- df %>%
+  filter(x == opt_x) %>%
+  pull(mb)
+
+
+
+ggplot(df, aes(x = x)) +
+  geom_line(aes(y = mb, color = "MB"), size = 1.2) +
+  geom_line(aes(y = mc, color = "MC"), size = 1.2) +
+  
+  # Punkt for optimum
+  geom_point(aes(x = opt_x, y = opt_y), color = "black", size = 3) +
+  
+  # Stiplede linjer til aksene
+  geom_segment(aes(x = opt_x, xend = opt_x, y = 0, yend = opt_y),
+               linetype = "dashed", color = "grey40") +
+  geom_segment(aes(x = 0, xend = opt_x, y = opt_y, yend = opt_y),
+               linetype = "dashed", color = "grey40") +
+  
+  # Penere labels og farger
+  scale_color_manual(values = c("MB" = "#2C7BB6", "MC" = "#D7191C")) +
+  labs(
+    title = "Optimal mengde (Q*) der MB = MC",
+    x = "Mengde (Q)",
+    y = "Pris / Kostnad",
+    color = "Kurver"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    legend.position = "bottom"
+  )
+
+```
+
+------------------------------------------------------------------------
+
+### Oppgave 3 – Diskontering og nåverdi
+
+Beregn nåverdien (r = 5 %) av følgende betalingsstrømmer:
+
+År 1: 3000 kr
+
+År 2: 5000 kr
+
+År 3: 6000 kr
+
+År 4: 10 000 kr
+
+År 5: 12 000 kr
+
+a)  Bruk formelen for nåverdi og regn ut for hvert år.
+b)  Summer og sammenlikn med en engangsutbetaling på 29 206 kr i dag.
+c)  Diskuter: Når er det fornuftig å bruke nåverdiberegninger i miljøprosjekter?
+
+```{r, warning=FALSE, error=FALSE}
+# diskonteringsrate
+d_rate = 0.05
+
+# lager en dataframe for a kunne plotte
+n = seq(0,5)
+nytte = c(0,3000,5000,6000,10000,12000)
+naverdi_df <- data.frame(n, nytte)
+
+# segner ut Nåverdi per år
+naverdi_df <- naverdi_df %>%
+  mutate(naverdi = nytte/(1+d_rate)^n)
+
+# summerer opp nåverdiene
+naverdi_df %>%
+  summarise(sum_naverdi = sum(naverdi)) %>%
+  pull(sum_naverdi)
+
+
+# Beregne nåverdi for hvert år og summerer
+nåverdi = 3000/(1+d_rate) + 5000/(1+d_rate)^2 + 6000/(1+d_rate)^3 + 10000/(1+d_rate)^4 +12000/(1+d_rate)^5
+nåverdi
+
+```
+
+To måter å regne ut nåverdi på gir samme svar, 30 204.65 kr.
+
+Siden nåverdien 30204.65 er større enn
+
+------------------------------------------------------------------------
+
+### Oppgave 4 – Social Cost of Carbon (SCC)
+
+Anta at ett tonn CO₂ gir 1 USD i global skade hvert år i 20 år.
+
+Obama brukte en diskonteringsrate på 2 %.
+
+Trump brukte en diskonteringsrate på 10 % og beregnet bare den amerikanske andelen (30 %).
+
+a)  Beregn SCC i begge tilfeller.
+b)  Sammenlikn og diskuter hvorfor estimatene blir så forskjellige.
+c)  Hva mener du er et “rettferdig” valg av diskonteringsrente og regnskapsmessig ståsted?
+
+```{r, warning=FALSE, error=FALSE}
+# diskonteringsrater
+d_obama = 0.02
+d_trump = 0.10
+
+# Årlig skade
+skade = 1
+
+# År variabel
+t = seq(0,20)
+
+# lager en dataframe
+SCC <- data.frame(t)
+
+SCC <- SCC %>%
+  mutate(obama = skade/(1+d_obama)^t ) %>%
+  mutate(trump = (skade*0.3)/(1+d_trump)^t)
+
+# Nåverdi av all skade under obaman sin politikk
+SCC %>%
+  summarise(sum(obama))
+
+# Nåverdi av all skade under trump sin politikk
+SCC %>%
+  summarise(sum(trump))
+
+```
+
+Her får vi at SCC under Obama sin politikk er 17.35 USD per tonn CO2, mens under Trump sin politikk er 1.39 USD per tonn CO2.
+
+Vi ser at diskonteringsraten har stor betydning for nåverdien av framtidige skader.
+
+------------------------------------------------------------------------
+
+### Oppgave 5 - Social Cost of Carbon (SCC) - avansert
+
+Når vi slipper ut ett tonn CO₂ i dag, blir en del av gassen værende i atmosfæren i flere hundre år.\
+Dette betyr at utslippet vil påvirke temperaturen – og dermed skadene – i lang tid framover.
+
+Skadene **øker over tid** av tre grunner: 1. CO₂ forsvinner bare langsomt fra atmosfæren. 2. Høyere temperatur gir ikke-lineære og mer alvorlige skader (ekstremvær, havnivå, tap av økosystem). 3. Verdensøkonomien vokser, slik at prosentvise skader blir større i kroner.
+
+Vi antar at den årlige skaden (i USD) fra ett tonn CO₂ kan beskrives ved en enkel funksjon:
+
+$D_t = 0.1 \cdot (1 + 0.02)^t$
+
+der:\
+- $D_t$ = skaden i år *t* (i USD)\
+- Startskade i år 0 er 0,1 USD\
+- Skadene vokser med 2 % hvert år
+
+a)  Regn ut skaden i år 10, 50 og 100. Hvorfor blir tallene mye større langt fram i tid?\
+b)  Beregn nåverdien av alle skader over 1000 år hvis diskonteringsrenten er 3 %.\
+c)  Gjør samme beregning med 7 % rente. Hva skjer med resultatet?
+d)  Nå antar vi som Trump at vi bare skal ta hensyn til 30 % av skadene (f.eks. USA sin andel). Hva blir nåverdien med 7 % rente?
+e)  Diskuter: Hvorfor betyr valget av diskonteringsrente så mye for verdien av framtidige klimaskader?
+
+```{r, warning=FALSE, error=FALSE}
+# År variabel
+t = seq(0,100)
+# lager en dataframe
+SCCA <- data.frame(t)
+# beregner skade per år
+SCCA <- SCCA %>%
+  mutate(Skade = 0.1*(1+0.02)^t)
+
+#Skade over 10 år
+sum(SCCA$Skade[0:10])
+
+
+#Skade over 20 år
+sum(SCCA$Skade[0:20])
+
+
+#Skade over 100 år
+sum(SCCA$Skade)
+
+# Nåverdi av all skade under 3% rente
+SCCA <- SCCA %>%
+  mutate(Lav_rente = Skade/(1+0.03)^t)
+
+SCCA %>%
+  summarise(sum(Lav_rente))
+# Nåverdi av all skade under 7% rente
+SCCA <- SCCA %>%
+  mutate(Hoy_rente = Skade/(1+0.10)^t)
+
+SCCA %>%
+  summarise(sum(Hoy_rente))
+
+```
+
+Når mye av kostnadene kommer i framtiden ser vi at endring i renter har stor betydning for nåverdien av framtidige skader.
+
+------------------------------------------------------------------------
+
+### Oppgave 6 – Diskusjon i grupper
+
+1.  Bør miljøprosjekter vurderes med lavere diskonteringsrente enn andre prosjekter?
+
+    1.  **Ja, argument:** Miljø- og klimaproblemene har svært langsiktige virkninger (hundrevis av år), og høy rente gjør at framtidige generasjoner teller nesten null → risiko for underinvestering i bærekraft. I tillegg så er det en risiko med miljø invisteringer i fremtiden, en levere diskonteringsfaktor kan hjelpe å ikke undervurdere denne risikoen.
+
+    2.  **Nei, argument:** Bruk av spesialrente for miljø kan skape inkonsistens i samfunnsøkonomiske analyser; noen hevder markedets tidspreferanse bør være felles.
+
+    3.  **Mellomløsning:** Bruke sensitivitetsanalyser (lav, middels, høy rente) eller avtagende diskonteringsrate over tid.
+
+2.  Er det rettferdig å gjennomføre et prosjekt som gir stor total nytte, men rammer en liten gruppe hardt?
+
+    1.  **Utilitaristisk syn:** Hvis total nytte (B–C) er positiv, bør prosjektet gjennomføres.
+
+    2.  **Fordelingshensyn:** Kan være urettferdig dersom kostnadene faller uforholdsmessig tungt på en liten gruppe.
+
+    3.  **Mulig løsning:** Gjennomfør prosjektet, men sørg for **kompensasjon** til de som rammes hardest (f.eks. flytteordninger, subsidier, erstatning). Dette følger Kaldor-Hicks-kriteriet: et prosjekt er samfunnsøkonomisk lønnsomt hvis de vinnende *kunne* kompensere taperne.
+
+3.  Hvordan kan vi verdsette naturgoder vi aldri kommer til å bruke direkte (f.eks. dyphavskoraller)?
+
+    1.  Slike goder har **ikke-bruksverdier**:
+
+        -   **Eksistensverdi** – folk setter pris på at de finnes.
+
+        -   **Arveverdi** – ønsket om å bevare for framtidige generasjoner.
+
+        -   **Altruistisk verdi** – glede over at andre kan bruke dem.
+
+    2.  **Metoder:** Bruk av oppgitte preferanser – f.eks. betinget verdsetting (CV) eller choice experiments (CE) – der folk uttrykker hvor mye de er villige til å betale for bevaring.
+
+    3.  **Utfordring:** Ingen markedsdata → stor usikkerhet, risiko for hypotetisk bias.
+
+    4.  **Pedagogisk poeng:** Ikke-bruksverdier kan være betydelige og bør tas med i en helhetlig samfunnsøkonomisk analyse.
+
+## Seminaroppgaver – Kapittel 4
+
+### Oppgave 1 – Bruksverdi, opsjonsverdi og ikke-bruksverdi
+
+Et naturområde i Troms brukes til friluftsliv, har potensial for turisme, og inneholder truede arter.
+
+1.  Klassifiser verdien av området i direkte bruksverdi, indirekte bruksverdi, opsjonsverdi og ikke-bruksverdi.
+
+    -   Direkte bruksverdi: friluftsliv (turer, jakt, fiske, bærplukking).
+    -   Indirekte bruksverdi: økosystemtjenester (karbonlagring, flomdemping, pollinering).
+    -   Opsjonsverdi: fremtidig turisme eller medisinske ressurser.
+    -   Ikke-bruksverdi: eksistensverdi (glede over at truede arter finnes), arveverdi (bevare for kommende generasjoner), altruistisk verdi (at andre kan bruke området).
+
+2.  Diskuter i grupper: Hvilke av disse verdiene fanges best opp av henholdsvis avslørte og oppgitte preferansemetoder?
+
+    -   Avslørte preferanser (f.eks. hedonisk prising, reisekostnadsmetoden) fanger best opp direkte og indirekte bruksverdier gjennom observerte handlinger og markedsdata.
+    -   Oppgitte preferanser (f.eks. betinget verdsetting, choice experiments) er bedre egnet for å fange opp opsjonsverdi og ikke-bruksverdi, da disse verdiene ofte ikke reflekteres i faktiske markedsvalg.
+
+### Oppgave 2 – WTP og WTA
+
+Anta at kommunen vurderer å bygge en støyskjerm langs en vei.
+
+Scenario A: Støyskjermen bygges → husstanden din må betale en engangskostnad.
+
+Scenario B: Støyskjermen bygges ikke → du kan kreve kompensasjon.
+
+a)  Formuler hva som er WTP og WTA i dette tilfellet.
+
+b)  Hvorfor viser empiriske studier ofte at WTA \>\> WTP?
+
+c)  Diskuter: Hvilken av disse størrelsene er mest relevant for miljøpolitikk?
+
+    -   WTP (scenario A): Hvor mye husholdningen er villig til å betale for å få støyskjermen.
+    -   WTA (scenario B): Hvor mye husholdningen krever i kompensasjon hvis skjermen ikke bygges.
+    -   WTA \> WTP: forklares av tapt nytte føles sterkere enn gevinst (tap–gevinst-asymmetri), endowment effect, manglende perfekte substitutter.
+    -   Relevans: Ofte brukes WTP i politiske analyser (fordi det er praktisk å måle), men WTA kan være mer korrekt hvis inngrepet representerer et tap.
+
+### Oppgave 3 – Metoder for verdsetting
+
+Knytt hver metode til riktig type preferanse og observasjon (direkte/indirekte, avslørt/oppgitt).
+
+Hedonisk prising
+
+Reisekostnadsmetoden
+
+Betinget verdsetting
+
+Choice experiment
+
+Defensive expenditures
+
+a)  Gi et eksempel på hvordan hver metode kan brukes i norsk sammenheng.
+b)  Diskuter styrker og svakheter ved å bruke en survey-basert metode (betinget verdsetting) sammenliknet med en markedsbasert metode (hedonisk prising).
+
+-   Hedonisk prising → avslørte preferanser, indirekte observasjon (f.eks. boligpriser nær stille vs. støyende områder i Oslo).
+
+-   Reisekostnadsmetode → avslørte preferanser, indirekte (f.eks. verdien av Lofoten som turistmål).
+
+-   Betinget verdsetting → oppgitte preferanser, direkte (f.eks. betalingsvillighet for bevaring av villaks).
+
+-   Choice experiment → oppgitte preferanser, direkte (f.eks. valg mellom ulike forvaltningsplaner for nasjonalparker).
+
+-   Defensive expenditures → avslørte preferanser, direkte (f.eks. utgifter til vannfilter i områder med dårlig vannkvalitet).
+
+**Diskusjon**: survey-baserte metoder fanger opp flere typer verdier (inkl. ikke-bruksverdi), men har usikkerhet (hypotetiske svar, strategisk bias). Markedsbaserte metoder er mer observerbare, men fanger bare bruksverdier.
+
+### Oppgave 4 – Diskusjon
+
+Bør miljøgoder behandles som økonomiske goder med en pengeverdi?
+
+Er det etisk problematisk å “sette en pris” på naturens eksistens (f.eks. dyphavskoraller)?
+
+Hvilken metode mener dere er mest troverdig for å verdsette miljøet – og hvorfor?
+
+Kapittel 4 i kurset omhandler verdsetting av goder som ikke omsettes i vanlige markeder, for eksempel miljø- og fellesgoder. Slike goder bidrar til flere typer økonomisk verdi – ikke bare **direkte bruksverdi**, men også **indirekte bruksverdi**, **opsjonsverdi** og **ikke-bruksverdi**. Nedenfor følger en rekke oppgaver der ulike ting skal verdsettes. Hver oppgave ber deg identifisere hvilke verdityper godet har, og foreslå egnede verdsettingsmetoder. Ofte kan flere metoder brukes – diskuter gjerne mulige alternativer og hvilken metode som passer best i hvert tilfelle.
+
+-   **Miljøgoder som økonomiske goder**
+
+    -   Fordel: Setter tall på naturens verdi slik at den kan sammenlignes med andre goder (f.eks. infrastrukturprosjekter). Uten prissetting risikerer man at miljøgoder blir behandlet som “gratis”.
+
+    -   Ulempe: Noen verdier er vanskelig å fange opp i kroner og øre – risiko for undervurdering.
+
+-   **Etiske spørsmål**
+
+    -   Mange stiller spørsmål ved om naturens eksistens kan eller bør ha en pengeverdi. For eksempel: Kan man virkelig si at en korallart er “verdt” 10 millioner kroner?
+
+    -   Kritikere hevder dette reduserer natur til en handelsvare, og at naturen også har en iboende verdi som ikke kan fanges i økonomiske modeller.
+
+    -   Tilhengere sier at etisk sett er det verre å ignorere naturen i analyser, fordi konsekvensen er at naturen ofte nedprioriteres.
+
+-   **Troverdighet og metoder**
+
+    -   **Avslørte preferanser** (markedsdata, hedonisk prising, reisekostnad): Mer “robust” fordi det bygger på faktiske valg. Begrensning: fanger stort sett **bruksverdier** (rekreasjon, eiendomsverdier).
+
+    -   **Oppgitte preferanser** (betinget verdsetting, choice experiments): Nødvendig for å fange **ikke-bruksverdier** (eksistens, arveverdi). Begrensning: svar kan være hypotetiske, strategiske eller påvirket av spørsmålsformulering.
+
+    -   Derfor er ofte en kombinasjon av metoder mest troverdig – avslørte preferanser for å fange bruksverdier, og oppgitte preferanser for ikke-bruksverdier.
+
+-   **Diskusjonspunkt for studentene**
+
+    -   Bør vi akseptere at verdsetting alltid er ufullkommen, men likevel bruke tall som beslutningsstøtte?
+
+    -   Eller bør noen verdier holdes utenfor økonomiske regnestykker og behandles som absolutte grenser (f.eks. truede arter, urørte økosystemer)?
+
+#### Rask oppsummerin av verdsettelses typer
+
+-   **Direkte bruksverdi** – nytte vi får fra å faktisk bruke naturen (f.eks. fiske, tur, tømmer).
+
+-   **Indirekte bruksverdi** – nytte gjennom økosystemtjenester (f.eks. pollinering, vannrensing, flomvern).
+
+-   **Opsjonsverdi** – verdien av å bevare muligheten for fremtidig bruk (f.eks. potensielle medisiner i regnskogen).
+
+-   **Ikke-bruksverdi** – verdi selv uten bruk:
+
+    -   **Eksistensverdi** – glede over at naturen/arten finnes.
+
+    -   **Arveverdi (bequest)** – ønske om å bevare for fremtidige generasjoner.
+
+    -   **Altruistisk verdi** – verdien av at andre mennesker kan bruke naturen.
+
+#### Rask oppsummering av versettingsmetoder
+
+-   **Markedspriser / produksjonsfunksjon** – bruk eksisterende markedsdata (f.eks. tømmerverdi, fisk fanget).
+
+-   **Hedonisk prising** – se hvordan miljøkvalitet reflekteres i boligpriser/lønn.
+
+-   **Reisekostnadsmetoden (TCM)** – mål verdien av rekreasjon via folks reiseutgifter/tid.
+
+-   **Defensive expenditures** – hvor mye folk betaler for å unngå skade (f.eks. støyskjerm, vannfilter).
+
+-   **Betinget verdsetting (CV)** – spørreundersøkelse om betalingsvillighet (WTP) eller kompensasjon (WTA).
+
+-   **Choice experiments (CE)** – spørreundersøkelse med valg mellom alternativer med ulike attributter/priser.
+
+-   **Erstatningskostnad/unngått skade** – verdsett naturtjenester ved kostnaden av å erstatte dem (f.eks. kunstig flomvern).
+
+## Oppgave 5: Verdisetting av et friluftsområde i Norge (Hardangervidda)
+
+*Hardangervidda nasjonalpark er Norges største nasjonalpark, kjent for vidstrakt høyfjellsnatur og rikt dyreliv.* Hardangervidda er et populært område for friluftsliv med aktiviteter som fiske, fotturer, jakt og naturobservasjon. Området har ingen markedspris, men det gir betydelig **direkte bruksverdi** for besøkende (rekreasjon) og også **indirekte verdier** (for eksempel økosystemtjenester som vannregulering). I tillegg har Hardangervidda en **opsjonsverdi** ved at folk som ikke besøker det i dag, likevel verdsetter muligheten til å kunne oppleve området i fremtiden. Det kan også ha **ikke-bruksverdi** for nordmenn som bare er tilfredse med at naturområdet eksisterer uberørt.
+
+**a)** Identifiser hvilke typer verdier Hardangervidda tilbyr (direkte bruk, indirekte bruk, opsjon, ikke-bruk). Forklar kort hver verdi i denne konteksten.
+
+    -   Direkte bruksverdi: fiske, jakt, friluftsliv.
+
+    -   Indirekte bruksverdi: vannregulering, karbonlagring, biologisk mangfold.
+
+    -   Opsjonsverdi: fremtidig turisme og opplevelser.
+
+    -   Ikke-bruksverdi: eksistensverdi, arveverdi for kommende generasjoner.
+
+**b)** Foreslå en egnet metode for å verdsette Hardangerviddas rekreasjonsverdi i kroner. Hvordan kan man anslå folks betalingsvillighet for å bruke området? (Tips: En **reisekostnadsmetode** kan benyttes ved å bruke besøkendes kostnader og frekvens som indikator på verdien) Diskuter styrker og svakheter ved denne metoden for dette formålet. Merk at reisekostnadsmetoden kun fanger opp bruksverdien av området – hvordan kan man eventuelt også fange opp ikke-bruksverdien?
+
+    -   Metode: Reisekostnadsmetoden – verdien estimeres via besøkendes utgifter (transport, tid). Styrke: basert på faktisk atferd. Svakhet: fanger bare bruksverdi, ikke opsjon/ikke-bruk.
+
+**c)** Hardangervidda kan også verdsettes med **betinget verdsetting** (spørreundersøkelse om betalingsvillighet) i hele befolkningen. Diskuter kort hvordan denne tilnærmingen skiller seg fra reisekostnadsmetoden, og hvilke verdityper den kan fange opp som reisekostnadsmetoden ikke gjør.
+
+    -   Betinget verdsetting kan fange opp både bruks- og ikke-bruksverdier (eksistens, arveverdi). Ulempe: hypotetiske svar, strategisk bias.
+
+## Oppgave 6: Verdisetting av en truet art (ulv i Norge)
+
+*Ulv fotografert i Polar Park, Bardu. Ulven er klassifisert som kritisk truet i Norge.* I dag finnes det under 80 individer av ulv påvist i Norge, og arten er sterkt omdiskutert. **Direkte bruksverdi** av ulv er minimal (ingen jakter på ulv for nytteeffekt, og få har ulvenyttelse utover eventuell økoturisme i dyreparker). Likevel kan ulven ha stor **ikke-bruksverdi**: Mange verdsetter at ulv finnes i norsk natur (eksistensverdi) eller ønsker å sikre arten for fremtidige generasjoner (arveverdi), selv om de aldri ser den personlig. Det finnes også en **opsjonsverdi** knyttet til ulv – muligheten for at man selv eller ens etterkommere en dag kan oppleve ulv i vill tilstand, dersom bestanden tar seg opp.
+
+**a)** Hvilke verdikomponenter knytter seg til bevaring av ulven i Norge? Diskuter særlig ikke-bruksverdien. Hvorfor kan folk ha en positiv betalingsvillighet for ulv *uten* at de selv bruker eller ser arten?
+
+    -   Direkte bruksverdi: minimal (ingen jakt, begrenset økoturisme).
+
+    -   Indirekte bruksverdi: økosystemtjenester (regulering av byttedyr).
+
+    -   Opsjonsverdi: mulighet for fremtidig opplevelse.
+
+    -   Ikke-bruksverdi: eksistensverdi (glede over at ulv finnes), arveverdi (bevare for fremtidige generasjoner). Folk kan ha positiv betalingsvillighet fordi de verdsetter biologisk mangfold og naturens integritet, selv uten direkte bruk.
+
+**b)** Hvilken verdsettingsmetode egner seg for å tallfeste verdien av å bevare ulv? Begrunn svaret. (Tips: Markedsbaserte metoder er vanskelige her, siden ulv ikke omsettes – man må trolig bruke **uttrykte preferanser**, f.eks. en spørreundersøkelse om betalingsvillighet for ulvebevaring.) Hvordan kan en slik **betinget verdsettingsstudie** eller **valgeksperiment** for ulv utformes, og hvilke utfordringer bør man være oppmerksom på (f.eks. at noen respondenter misliker ulv og har negativ betalingsvillighet)?
+
+    -   Metode: Betinget verdsetting eller choice experiment. Utforming: spørre om betalingsvillighet for ulike bevaringsscenarier (f.eks. ingen ulv, lav bestand, høy bestand). Utfordringer: strategisk bias, protest responses, misliker ulv (negativ WTP). 
+    
+
+**c)** Anta at en landsomfattende undersøkelse finner at gjennomsnittlig betalingsvillighet for å bevare ulvestammen er 300 kr per husholdning i året. Hvordan kan dette resultatet brukes til å anslå en total ikke-bruksverdi av ulv på landsbasis? Hva om enkelte grupper krever kompensasjon (negativ betalingsvillighet) for å akseptere ulv – hvordan håndterer man det i analysen?
+
+    -   Total ikke-bruksverdi = betalingsvillighet per husholdning * antall husholdninger. Negativ WTP kan inkluderes som en kostnad. 
+
+## Oppgave 7: Verdisetting av redusert støyplage (hedonisk prising)
+
+I en norsk by vurderes tiltak for å redusere trafikkstøy i et boligområde. Vi har følgende forenklede opplysninger om boligmarkedet:
+
+-   Boliger som ligger i et **stille område** (omtrent 50 dB støynivå) selges i gjennomsnitt for 5,0 millioner kroner.
+
+-   Tilsvarende boliger av lik størrelse og standard nær en sterkt trafikkert vei med **høyt støynivå** (ca. 60 dB) selges for i snitt 4,8 millioner kroner.
+
+Tidligere studier viser at huspriser typisk faller med om lag 0,1–0,6 % for hver økning på 1 dB i støy. Anta at forskjellen på 200 000 kr mellom 50 dB og 60 dB reflekterer verdsettelsen av 10 dB mer støy (ca. 4 % prisfall, altså omtrent 0,4 % per dB).
+
+**a)** Bruk tallene over til å beregne den **implisitte prisen** for støy: Hvor mange kroner ser det ut til at markedet verdsetter en reduksjon på 1 dB i støynivå per bolig til? (Tips: anta tilnærmet lineært forhold i det aktuelle området.)
+
+    -   Implisitt pris per dB = prisforskjell / dB-forskjell = 200 000 kr / 10 dB = 20 000 kr per dB.
+
+**b)** Kommunen vil bygge en støyskjerm som vil redusere støynivået med ca. 5 dB for 100 boliger som i dag har 60 dB. Estimér den totale gevinsten (økningen i samlet boligsalgsverdi) som dette tiltaket vil medføre for disse 100 boligene, basert på den implisitte prisen per dB fra punkt (a).
+
+    -   Total gevinst = implisitt pris per dB * reduksjon i dB * antall boliger = 20 000 kr/dB * 5 dB * 100 boliger = 10 000 000 kr.
+
+**c)** Hvilken type økonomisk verdi representerer redusert støy for beboerne? Er det en bruksverdi eller ikke-bruksverdi – og for *hvem*? Diskuter kort hvordan **hedonisk prismetode** benytter boligmarkedet til å verdsette miljøgoder som stillhet. Hvilke forutsetninger må være oppfylt for at beregningen i (a) og (b) skal være gyldig (f.eks. at boligene og kjøperne er like bortsett fra støy)? Nevnt også eventuelle begrensninger ved hedonisk prising som metode.
+
+    -   Redusert støy er en **direkte bruksverdi** for beboerne, da det forbedrer deres livskvalitet. Hedonisk prismetode bruker boligpriser som reflekterer folks betalingsvillighet for miljøkvalitet (støy). Forutsetninger: boligene må være like i alle andre aspekter enn støy, markedet må være konkurransedyktig, og kjøperne må være informert om støyforholdene. Begrensninger: fanger bare bruksverdier, kan være påvirket av andre faktorer (f.eks. kriminalitet, skolekvalitet).
+
+## Oppgave 8: Verdisetting av Great Barrier Reef (Australia)
+
+*Korallrev i Great Barrier Reef, Australia – verdens største korallrev.* Great Barrier Reef utenfor Australias kyst har enormt biologisk mangfold og tiltrekker seg rundt to millioner turister årlig. Korallrevet gir flere typer verdier: **Direkte bruksverdi** gjennom turisme (dykking, rekreasjon) og kommersielt fiske, **indirekte verdier** ved å beskytte kysten mot bølger og ved å støtte økosystemer (fiskebestander, karbonlagring i koraller), **opsjonsverdi** ved at både Australia og resten av verden ønsker muligheten til å oppleve eller bruke revet i fremtiden, samt betydelig **ikke-bruksverdi** i form av eksistensverdi – mange setter pris på at revet og dets unike artsliv eksisterer, selv om de aldri reiser dit.
+
+I 2017 ble Great Barrier Reef anslått til en **samlet verdi på 56 milliarder australske dollar** som natur- og ikonisk asset. Denne verdien inkluderte både økonomisk aktivitet (anslagsvis A\$6,4 milliarder per år i verdiskaping og 64 000 arbeidsplasser knyttet til revet) og ikke-markedsverdier knyttet til revets ikoniske status og eksistens. Anta at du skal gjennomføre en samfunnsøkonomisk analyse av tiltak for å redde korallrevet fra miljøtrusler.
+
+**a)** Hvilke komponenter utgjør den **totale økonomiske verdien** (Total Economic Value) av Great Barrier Reef? Sortér de verdiene du kommer på under kategoriene direkte bruk, indirekte bruk, opsjon og ikke-bruk. (For eksempel: turistinntekter = direkte bruksverdi, bevaring av biologisk mangfold = ikke-bruksverdi, osv.)
+
+    -   Direkte bruksverdi: turisme (dykking, snorkling), kommersielt fiske.
+
+    -   Indirekte bruksverdi: kystbeskyttelse, karbonlagring, støtte til fiskebestander.
+
+    -   Opsjonsverdi: muligheten for fremtidig bruk/opplevelse av revet.
+
+    -   Ikke-bruksverdi: eksistensverdi (glede over at revet og dets arter finnes), arveverdi (bevare for fremtidige generasjoner), altruistisk verdi (at andre kan oppleve revet).
+
+**b)** Hvilke verdsettingsmetoder kan benyttes for å tallfeste de ulike verdiene du identifiserte i (a)? Foreslå én eller flere metoder og koble dem til verditypene: Hvordan kunne man verdsette revets rekreasjonsbruk for turister? Hvordan verdsette indirekte miljøtjenester som kystbeskyttelse eller fiske? Og ikke minst – hvordan kan man måle verdien av revets eksistens for folk som aldri besøker det? Diskuter bruken av f.eks. **reisekostnadsmetode** (for rekreasjonsverdi), faktiske markedsdata (for fiskeri), **betinget verdsetting** eller **valgeksperiment** (for eksistens- og opsjonsverdier).
+
+    -   Direkte bruksverdi: Reisekostnadsmetode for turisme, markedsdata for fiske.
+
+    -   Indirekte bruksverdi: Erstatningskostnad for kystbeskyttelse, produksjonsfunksjon for fiskebestander.
+
+    -   Opsjonsverdi og ikke-bruksverdi: Betinget verdsetting eller choice experiments for å måle betalingsvillighet for bevaring og eksistens.
+
+**c)** Revet er et verdensarvsted av global interesse. Hvem utgjør den “berørte befolkningen” når man ser på ikke-bruksverdien (nasjonalt vs. internasjonalt publikum)? Drøft kort hvordan verdsettingsresultater fra australske studier kan (eller ikke kan) overføres til et globalt perspektiv – kan man argumentere for at også folk i andre land har en betalingsvillighet for å bevare Great Barrier Reef?
+
+    -    Ikke-bruksverdi er global → alle verdens borgere kan være berørt. Overføring fra nasjonale til globale studier er vanskelig, men kan gi et anslag.
+
+## Oppgave 9: Verdisetting av regnskogen i Amazonas
+
+Amazonas-regnskogen i Sør-Amerika er verdens største tropiske regnskog og spiller en kritisk rolle for globalt miljø. Regionen dekker over 5,5 millioner km² og utgjør mer enn halvparten av all gjenværende regnskog på jorda. Amazonas er også blant de mest biologisk mangfoldige områdene – hjem til anslagsvis 10 % av verdens kjente arter. Regnskogen leverer en lang rekke **økosystemtjenester** med stor verdi:
+
+-   **Direkte bruksverdi**: Både urbefolkning og andre høster direkte produkter som tømmer, frukt, nøtter og medisinske planter. Det finnes også potensial for økoturisme i visse områder (f.eks. jungelsafari i Peru eller Brasil).
+
+-   **Indirekte bruksverdi**: Amazonas påvirker klima og nedbørsmønstre regionalt (de såkalte “flyvende elver” av fuktighet) og bidrar globalt ved å oppta og lagre enorme mengder CO₂. Skogen bremser global oppvarming og bevarer jordas kretsløp for næringsstoffer og vann. Disse indirekte verdiene kommer mennesker langt utenfor Amazonas til gode.
+
+-   **Opsjonsverdi**: Det ligger en stor opsjonsverdi i Amazonas’ biodiversitet – for eksempel kan uoppdagede planter og dyr inneholde nye medisiner eller genetiske ressurser i fremtiden. Å bevare skogen i dag holder åpen muligheten for fremtidig bruk av disse ressursene.
+
+-   **Ikke-bruksverdi**: Mye av verdien er knyttet til ren eksistensverdi og altruistisk verdi. Folk over hele verden kan verdsette at Amazonas og dens dyre- og planteliv **finnes** intakt, selv om de aldri selv vil besøke den. Også kommende generasjoners velferd (arveverdi) spiller inn – å bevare regnskogen for at våre etterkommere skal få nytte eller glede av den.
+
+En studie fra Verdensbanken (2023) forsøkte å sette tall på Amazons samlede verdi. Globalt utgjør **CO₂-lagringen og klimareguleringsverdien** en dominerende del – bare dette ble verdsatt til hundrevis av milliarder dollar årlig (ved å verdsette CO₂-utslipp til ca. \$40/tonn). Studien peker også på **opsjonsverdien** som “et medisinsk skattekammer” og **ren eksistensverdi** for regnskogen. Summen av Amazonassystemets nytte for verden ble anslått til minst \$317 milliarder per år, langt større enn verdien av å utnytte området til tømmerhogst, ranchdrift og gruvedrift (anslått \$43–98 milliarder/år).
+
+**a)** Bryt ned de forskjellige verdiene Amazonas gir (jf. listene over) og angi for hver om det er direkte bruk, indirekte bruk, opsjon eller ikke-bruk. Hvilke av disse verdiene tilfaller primært lokalsamfunn og nasjoner i Amazonas-regionen, og hvilke tilfaller hele verden?
+
+    -   Direkte bruksverdi: tømmer, frukt, medisinske planter (primært lokalsamfunn).
+
+    -   Indirekte bruksverdi: klimaregulering, CO₂-lagring (globalt).
+
+    -   Opsjonsverdi: potensielle medisiner/genetiske ressurser (globalt).
+
+    -   Ikke-bruksverdi: eksistensverdi, arveverdi (globalt).
+
+**b)** Drøft metoder for å verdsette **klimanytten** av Amazonas. (Hint: Man kan bruke en **skyggepris** for CO₂-utslipp – f.eks. dagens kvotepris eller anslag på klimaskade per tonn CO₂ – og multiplisere med tonn karbon skogen lagrer. Dette er en form for markedsbasert verdsetting av en indirekte bruksverdi.) Hvordan verdsetter man videre **opsjonsverdien** og **eksistensverdien**? Forslå bruken av **spørreundersøkelser** globalt (betinget verdsetting) for å måle folks betalingsvillighet for å bevare regnskogen. Hva er utfordringene med å gjennomføre og stole på slike internasjonale verdsettingsstudier?
+
+    -   Klimanytte: CO₂-pris * mengde karbon.
+
+    -   Opsjons- og eksistensverdi: spørreundersøkelser (global CV).
+
+    -   Utfordring: internasjonal representativitet og betalingsvillighet.
+
+**c)** Anta at internasjonale undersøkelser finner at folk i rike land til sammen er villige til å betale f.eks. 1 milliard dollar årlig for å unngå fortsatt avskoging av Amazonas. Hvordan kan slike tall brukes i praktisk politikk? Diskuter konseptet **“betalingsvillighet for bevaring”** opp mot de faktiske kostnadene og inntektene ved ikke-bærekraftig utnyttelse. (For eksempel: Bør rike land betale Brasil for å la være å hogge skog, hvis bevaringsverdien for verden overstiger verdien av jordbruk og tømmer?) Hva slags internasjonale ordninger eller fond eksisterer eller kunne tenkes for å overføre verdsettingen til faktiske økonomiske insentiver for bevaring?
+
+    -   Tall kan brukes til å rettferdiggjøre internasjonal finansiering for bevaring (f.eks. REDD+).
+
+    -   Betalingsvillighet kan sammenlignes med kostnader ved avskoging.
+
+    -   Internasjonale ordninger: klimafond, bevaringsfond, betalingsordninger for økosystemtjenester.
+
+**d)** Verdsetting av Amazonas involverer mange usikre faktorer og etiske spørsmål. Avslutningsvis – diskuter kort hvilke begrensninger som finnes i å skulle “prissette” unike økosystemer som Amazonas. Kan alt tallfestes i penger, eller bør noen verdier håndteres kvalitativt? Hva er formålet med å beregne en monetær verdi på regnskogen i en samfunnsøkonomisk analyse? (Tenk over nytte vs. prinsipper, og bruken av verdsettingsanslag i beslutningsprosesser.)
+
+    -   Begrensninger: Vanskelig å sette full verdi på unike økosystemer. Monetær verdsetting brukes mest for å synliggjøre hva man står i fare for å miste, ikke for å “selge” naturen.
