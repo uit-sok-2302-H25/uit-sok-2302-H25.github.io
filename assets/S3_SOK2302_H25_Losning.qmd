@@ -1,0 +1,798 @@
+---
+title: "Seminar 3 Losningsforslag: Dynamiske effekter og ikke fornybare ressurser"
+subtitle: "Sok-2302 h25"
+author: "Eirik Eriksen Heen & ChatGPT"
+date: "`r Sys.Date()`"
+date-format: DD. MMM YYYY
+format: html
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+  error: false
+  freeze: auto
+  code-overflow: wrap # Pakker kode som er for lang for linjen
+---
+
+```{r start, include = FALSE}
+##### Start up #####
+rm(list = ls()) # Empties all data
+
+options(scipen=10) # writes 10 scipens before scientific script
+options(digits=10) # writes up to 10 digits
+
+# loading packages
+library(tidyverse)
+library(mosaic)
+library(gt)
+
+# Kode for a kunne bruke norske bokstaver
+Sys.setlocale(locale="no_NO")
+
+```
+
+# Seminaroppgaver Kapittel 5 & 6
+
+## Oppgave 1 – To-periode-modellen
+
+Anta at en ressurs kan utvinnes i to perioder. Etterspørselskurven er:\
+$p = 12 - 0.5q$ Marginalkostnaden (MC) er konstant på 2.\
+Totalt ressurslager: 12 enheter.\
+Diskonteringsrente: 10 %.
+
+1.  Finn likevektsforbruk i de to periodene.\
+2.  Beregn prisen i hver periode.\
+3.  Hva er marginal user cost (MUC) i hver periode?\
+4.  Hvordan endres fordelingen mellom periodene dersom diskonteringsrenten økes til 20 %?
+
+### Losning oppgave 1.1, 1.2, 1.3
+
+For å løsen denne oppgaven bruker vi to-periode modellen. Det er flere måter vi kan finne løsningen:
+
+1.  Vi kan bruk definisjonen fra bok/forelesningen altså Hotellings-betingelsen at $MNB_1=\frac{MNB_2}{1+r}$, og $q_1+q_2=S$.
+
+2.  Kan sette opp Lagrange funksjonen og finne løsning ved hjelp av FOC.
+
+3.  Vi kan bruke et optimaliseringsverktøy i R.
+
+Jeg skal vise alle tre metodene.
+
+#### Metode 1: Bruke definisjonen av effektivitet
+
+Effektivitet: $MNB_1=\frac{MNB_2}{1+r}$, og $q_1+q_2=S$.
+
+Vi har to ligninger:
+
+1)  **Effektivitet (Hotelling-betingelsen):**
+
+$$
+10 - 0.5q_1 \;=\; \frac{10 - 0.5q_2}{1+r}
+$$
+
+2)  **Ressursbegrensning:**
+
+$$
+q_1 + q_2 = 12
+$$
+
+------------------------------------------------------------------------
+
+**Steg 1: Bruk ressursbegrensningen**\
+Vi skriver $q_1$ i stedet for $q_2$ ved å bruke $q_1 = 12 - q_2$.\
+Sett dette inn i effektivitet:
+
+$$
+10 - 0.5(12 - q_2) \;=\; \frac{10 - 0.5q_2}{1+r}.
+$$
+
+------------------------------------------------------------------------
+
+**Steg 2: Rydd opp på venstresiden**\
+Regn ut $0.5 \cdot 12 = 6$:
+
+$$
+10 - 6 + 0.5q_2 \;=\; \frac{10 - 0.5q_2}{1+r}
+$$
+
+altså
+
+$$
+4 + 0.5q_2 \;=\; \frac{10 - 0.5q_2}{1+r}.
+$$
+
+------------------------------------------------------------------------
+
+**Steg 3: Fjern brøken**\
+Gange begge sider med $(1+r)$:
+
+$$
+(4 + 0.5q_2)(1+r) \;=\; 10 - 0.5q_2.
+$$
+
+------------------------------------------------------------------------
+
+**Steg 4: Gang ut alle ledd**
+
+Venstresiden:\
+$$
+(4 + 0.5q_2)(1+r) = 4 + 4r + 0.5q_2 + 0.5rq_2.
+$$
+
+Hele ligningen blir:\
+$$
+4 + 4r + 0.5q_2 + 0.5rq_2 = 10 - 0.5q_2.
+$$
+
+------------------------------------------------------------------------
+
+**Steg 5: Flytt alle** $q_2$-ledd til venstre side og konstanter til høyresiden
+
+$$
+0.5q_2 + 0.5rq_2 + 0.5q_2 = 10 - (4 + 4r).
+$$
+
+------------------------------------------------------------------------
+
+**Steg 6: Trekk sammen**
+
+Venstre side: $0.5q_2 + 0.5q_2 = q_2$.\
+Dermed:
+
+$$
+q_2 + 0.5rq_2 = 6 - 4r.
+$$
+
+------------------------------------------------------------------------
+
+**Steg 7: Faktoriser** $q_2$ og løs
+
+$$
+q_2(1 + 0.5r) = 6 - 4r
+$$
+
+$$
+q_2 = \frac{6 - 4r}{1 + 0.5r}.
+$$
+
+------------------------------------------------------------------------
+
+**Steg 8: Finn** $q_1$
+
+$$
+q_1 = 12 - q_2
+= 12 - \frac{6 - 4r}{1 + 0.5r}.
+$$
+
+------------------------------------------------------------------------
+
+**Små tall-eksempler i R**
+
+```{r}
+# Parametre
+r  <- 0.10
+S  <- 12
+a  <- 12; b <- 0.5  # p(q)=a - b q
+MC <- 2
+
+# Ryddig algebra-resultat:
+q2 <- (6 - 4*r)/(1 + 0.5*r)
+q1 <- S - q2
+
+p  <- function(q) a - b*q
+p1 <- p(q1); p2 <- p(q2)
+
+MUC1 <- p1 - MC
+MUC2 <- p2 - MC
+
+```
+
+I likevekt ser vi at kvantum i periode 1 er `r round(q1,2)` og i periode 2 er `r round(q2,2)`.\
+
+Prisene blir da `r round(p1,2)` i periode 1 og `r round(p2,2)` i periode 2.\
+
+Marginal User Cost (MUC) er `r round(MUC1,2)` i periode 1 og `r round(MUC2,2)` i periode 2.
+
+#### Metode 2: Lagrange
+
+Vi kan også sette opp Lagrange funksjonen og finne løsning ved hjelp av FOC.
+
+**Utgangspunkt:** Etterspørsel $p(q)=12-0.5q$, marginalkostnad $MC=2$, lager $S=12$, rente $r=0.10$.
+
+------------------------------------------------------------------------
+
+**Hvorfor trenger vi en funksjon for total netto nytte?**\
+I Lagrange-metoden maksimerer vi nåverdien av **total netto nytte** (TNN) i to perioder. For å finne TNN starter vi med **marginal netto nytte** (MNN), og integrerer denne over $q$.
+
+------------------------------------------------------------------------
+
+**(A) Marginal og total netto nytte med integrasjon**
+
+Marginal netto nytte (MNN) er marginal nytte minus marginal kostnad:
+
+$$
+MNN(q) = p(q) - MC = (12 - 0.5q) - 2 = 10 - 0.5q.
+$$
+
+Total netto nytte (TNN) finner vi ved å summere (integrere) MNN fra 0 til $q$:
+
+$$
+TNN(q) = \int_0^q MNN(x)\,dx = \int_0^q (10 - 0.5x)\,dx.
+$$
+
+$$
+TNN(q) = 10q - 0.25q^2.
+$$
+
+> Denne $TNN(q)$-funksjonen bruker vi direkte i Lagrange-oppsettet.
+
+```{r}
+# Funksjoner vi bruker videre
+MNN <- function(q) 10 - 0.5*q
+TNN <- function(q) 10*q - 0.25*q^2
+```
+
+**(B) Geometrisk tolkning** Hvis vi ikke ønsker å bruke integrasjon kan vi regne ut arealet under grafen med gemetri. La oss se på et eksemel hvor omsatt kvantum i markedet er 10, hva blir konsument overskuddet og produsent overskuddet. Vi skal overfør dette til alle q etter hvert.
+
+*Konsument overskudd (CS)* differansen mellom marignal betalingsvillighet og pris, altså hvor mye nytte en konsument får utover det de betaler. Dette er arealet av trekanten over prisen og under etterspørselskurven.
+
+*Produsent overskudd (PS)* differansen mellom pris og marginal kostnad, altså hvor mye inntekter en produsent får utover det det koster å produsere. Dette er arealet av rektangelet under prisen og over marginalkostnadskurven.
+
+```{r}
+# Parametre
+a <- 12; b <- 0.5; MC <- 2
+q_star <- 10
+p_star <- a - b*q_star
+
+# Data for hele figuren (0–24)
+df <- tibble(
+  q = seq(0, 24, by = 0.01),
+  demand = a - b*q,
+  mc = MC
+)
+
+# Farger
+col_cs_fill <- "#a6cee3"  # lys blå (CS areal)
+col_cs_line <- "#1f78b4"  # mørk blå (CS høyde)
+col_ps_fill <- "#b2df8a"  # lys grønn (PS areal)
+col_ps_line <- "#ff7f00"  # oransje (PS høyde)
+col_q_line  <- "#6a3d9a"  # lilla (q* lengde)
+
+df %>%
+  ggplot(aes(q)) +
+  # Etterspørsel og MC
+  geom_line(aes(y = demand)) +
+  geom_hline(yintercept = MC, linetype = "dashed") +
+  # Hjelpelinjer ved q* og p*
+  geom_vline(xintercept = q_star, linetype = "dotted") +
+  geom_hline(yintercept = p_star, linetype = "dotted") +
+
+  # PS (rektangel, grønn)
+  geom_rect(aes(xmin = 0, xmax = q_star, ymin = MC, ymax = p_star),
+            fill = col_ps_fill, alpha = 0.6, inherit.aes = FALSE) +
+
+  # CS (trekant, blå)
+  geom_polygon(
+    data = tibble(
+      q = c(0, q_star, 0),
+      y = c(a, p_star, p_star)
+    ),
+    aes(x = q, y = y),
+    fill = col_cs_fill, alpha = 0.6
+  ) +
+
+  # --- Hjelpelinjer ---
+  # CS-høyde (blå)
+  geom_segment(aes(x = 0, xend = 0, y = p_star, yend = a),
+               color = col_cs_line, linewidth = 1.4) +
+  # Lengde q* (lilla)
+  geom_segment(aes(x = 0, xend = q_star, y = p_star, yend = p_star),
+               color = col_q_line, linewidth = 1.4) +
+  # PS-høyde (oransje)
+  geom_segment(aes(x = 0, xend = 0, y = MC, yend = p_star),
+               color = col_ps_line, linewidth = 1.4) +
+
+  labs(
+    title = "Geometrisk tolkning: CS (blå) og PS (grønn) ved q* = 10",
+    x = "Kvantum q", y = "Pris"
+  ) +
+  coord_cartesian(xlim = c(0, 24), ylim = c(0, 12)) +
+  theme_minimal()
+```
+
+**Blå trekant (CS):** arealet under etterspørselskurven og over prislinjen.
+
+**Grønn firkant (PS):** arealet under pris og over MC.
+
+*Konsumentoverskudd (CS)*: er da høyde (blå linje) ganger med lengde (lilla linje) delt på 2.\
+$$
+CS(q) = \frac{(12 - p) \cdot q}{2}
+= \frac{(12 - (12 - 0.5q)) \cdot q}{2}
+= 0.25q^2
+$$
+
+*Produsentoverskudd (PS)*: er da høyde (oransje linje) ganger med lengde (lilla linje).\
+$$
+PS(q) = (p - MC) \cdot q
+= \big((12 - 0.5q) - 2\big) \cdot q
+= (10 - 0.5q)q
+= 10q - 0.5q^2
+$$ Totalt samfunnsøkonomisk overskudd (TS) er summen av CS og PS: $$
+TS(q) = CS(q) + PS(q)
+= 0.25q^2 + 10q - 0.5q^2
+= 10q - 0.25q^2
+$$ Som vi ser er dette det samme som vi fant ved integrasjon!
+
+#### Lagrange metode
+
+**Utgangspunkt:** Etterspørsel $p(q)=12-0.5q$, marginalkostnad $MC=2$, lager $S=12$, rente $r=0.10$.\
+**Marginal netto nytte (MNN):** $MNN(q)=p(q)-MC=10-0.5q$.\
+**Total netto nytte per periode (integrert uttrykk):** $$
+\text{Netto nytte i én periode} = \int_0^{q} (10-0.5x)\,dx \;=\; 10q - 0.25q^2.
+$$
+
+------------------------------------------------------------------------
+
+**Hvorfor neddiskontere periode 2?**\
+Nytte i framtiden er mindre verdt i dag, derfor deles periode 2 på $(1+r)$ når vi maksimerer **nåverdien**.
+
+**Maksimeringsproblem (to perioder):** $$
+\max_{q_1,q_2\ge 0}\; \underbrace{\big(10q_1-0.25q_1^2\big)}_{\text{netto nytte i periode 1}}
+\;+\;\frac{1}{1+r}\underbrace{\big(10q_2-0.25q_2^2\big)}_{\text{netto nytte i periode 2}}
+\quad \text{slik at} \quad q_1+q_2=S.
+$$
+
+**Lagrange-funksjon (med eksplisitte uttrykk):** $$
+\mathcal{L} \;=\; \big(10q_1-0.25q_1^2\big)\;+\;\frac{1}{1+r}\big(10q_2-0.25q_2^2\big)\;+\;\lambda\,(S-q_1-q_2).
+$$
+
+**Førsteordensbetingelser (FOC):** $$
+\frac{\partial \mathcal{L}}{\partial q_1}:\quad (10-0.5q_1)-\lambda=0 \;\Rightarrow\; 10-0.5q_1=\lambda,
+$$ $$
+\frac{\partial \mathcal{L}}{\partial q_2}:\quad \frac{1}{1+r}(10-0.5q_2)-\lambda=0 \;\Rightarrow\; \frac{10-0.5q_2}{1+r}=\lambda,
+$$ $$
+\frac{\partial \mathcal{L}}{\partial \lambda}:\quad S-q_1-q_2=0 \;\Rightarrow\; q_1+q_2=S.
+$$
+
+**Hotelling-betingelsen:**
+
+Ved å sette de to førsteordensbetingelsene lik hverandre finner vi: $$
+10-0.5q_1 \;=\; \frac{10-0.5q_2}{1+r}, 
+\qquad q_1+q_2=S.
+$$
+
+Dette er Hotelling-betingelse og dette er hva vi regnet ut i Metode 1. En fordel ved å regne ut ved lagrange metode er at vi kan finne lambda, eller skygge prisen også kjent som Marignal User Cost (MCU).
+
+Vi har fra FOC at **skyggeprisen** (Lagrange-multiplikatoren) er lik marginal netto nytte i periode 1. Fra FOC for $q_1$ har vi: $$
+\lambda \;=\; 10 - 0.5\,q_1.
+$$ Fra likevekten fant vi: $$
+q_1 \;=\; 12 \;-\; \frac{6 - 4r}{1 + 0.5r}.
+$$
+
+**Sett inn og forenkle:** $$
+\lambda \;=\; 10 - 0.5\!\left(12 - \frac{6 - 4r}{1+0.5r}\right)
+= 10 - 6 + \frac{0.5(6 - 4r)}{1+0.5r}
+= 4 + \frac{3 - 2r}{1+0.5r}.
+$$
+
+Trekk sammen brøken (felles nevner $1+0.5r$): $$
+\lambda \;=\; \frac{4(1+0.5r) + (3 - 2r)}{1+0.5r}
+= \frac{4 + 2r + 3 - 2r}{1+0.5r}
+= \frac{7}{\,1+0.5r\,}.
+$$
+
+**Altså:** $$
+\boxed{\;\lambda(r) \;=\; \frac{7}{\,1+0.5r\,}\;}
+$$
+
+Dette betyr også at $$
+\lambda \;=\; MNN_1 \;=\; p_1 - MC \;=\; MUC_1,
+$$ altså skyggeprisen er lik knapphetsrenten (Marginal User Cost) i periode 1.
+
+#### Metode 3: Optimaliseringsverktøy i R
+
+**Idé:** Vi finner likevekten numerisk ved å løse $$
+f(q_2) \equiv MNN(q_1) - \frac{MNN(q_2)}{1+r} = 0,
+\qquad \text{der } q_1 = S - q_2,
+$$ og der **marginal netto nytte** er $MNN(q)=10-0.5q$ (fra $p(q)=12-0.5q$ og $MC=2$).
+
+```{r}
+# --- Parametre (endre gjerne r og S) ---
+r <- 0.10
+S <- 12
+
+# Etterspørsel og marginal netto nytte
+p   <- function(q) 12 - 0.5*q
+MNN <- function(q) 10 - 0.5*q
+
+# Likevektsligning: MNN(q1) - MNN(q2)/(1+r) = 0, med q1 = S - q2
+f <- function(q2) {
+  q1 <- S - q2
+  MNN(q1) - MNN(q2)/(1 + r)
+}
+
+# Finn q2 i [0, S] som løser f(q2)=0, og deretter q1
+q2 <- uniroot(f, c(0, S))$root
+q1 <- S - q2
+
+# Priser og MUC
+p1   <- p(q1); p2 <- p(q2)
+MC   <- 2
+MUC1 <- p1 - MC
+MUC2 <- p2 - MC
+
+```
+
+I likevekt får vi kvantum i periode 1 $q_1 =$ `r round(q1, 2)` og i periode 2 $q_2 =$ `r round(q2, 2)`. Prisene blir $p_1 =$ `r round(p1, 2)` og $p_2 =$ `r round(p2, 2)`. (Marginal User Cost) $MUC_1 =$ `r round(MUC1, 2)` og $MUC_2 =$ `r round(MUC2, 2)`.
+
+### Løsning oppgave 1.4
+
+```{r}
+# Endrer diskonteringsrenten til 20 %
+r <- 0.2
+q2 <- uniroot(f, c(0, 12))$root
+q1 <- 12 - q2
+
+# Finner prisen i hver periode
+p1 <- 12 - 0.5*q1
+p2 <- 12 - 0.5*q2
+```
+
+Her ser vi at vi finner et kvantum på `r round(q1,2)` i periode 1 og `r round(q2,2)` i periode 2.\
+
+------------------------------------------------------------------------
+
+## Oppgave 2: Statisk vs. dynamisk effektivitet
+
+Gi eksempler fra norsk ressursforvaltning på: 1. Et problem som passer best med **statisk effektivitet**. 2. Et problem som passer best med **dynamisk effektivitet**.\
+Forklar hvorfor.
+
+### Løsning oppgave 2
+
+-   **Statisk effektivitet**: Kraftmarkedet time-for-time (kort sikt).\
+-   **Dynamisk effektivitet**: Fiskeriforvaltning (kvoter påvirker fremtidige bestander).
+
+------------------------------------------------------------------------
+
+## Oppgave 3: To-periodemodellen
+
+Anta at en ikke-fornybar ressurs:
+
+-   Marginalkostnad på 100
+
+-   Etterspørsel gitt ved P = 10 000 – q
+
+-   Totalt ressurslager er 14 000 enheter.
+
+1.  Finn den optimale fordelingen mellom periode 1 og 2 **uten diskontering**.
+2.  For likevektsløsningen, beregn:
+    1.  Pris i hver periode
+    2.  Marginal User Cost (MUC) i hver periode
+    3.  Konsumentoverskudd i hver periode
+    4.  Hva er produsentoverskuddet i hver periode?
+    5.  Hva er totalt samfunnsøkonomisk overskudd i hver periode?
+3.  Undersøk effekten av å øke uttaket i periode 1 med en enhet (dvs. ($q_1^*+1,q_2^*-1$)):
+    1.  Hva skjer med det samfunnsøkonomiske oversuddet i periode 1 og 2?
+    2.  Ser du sammenheng mellom disse endringene i samfunnsøkonomiskoversud og MUC?
+4.  Hva skjer med fordelingen hvis vi innfører en diskonteringsrente på 40 %?
+5.  Visualiser resultatene i en figur, velg med eller uten diskontering.
+6.  Sammenlikn MUC med og uten diskontering.
+
+### Løsning oppgave 3.1
+
+Gitt: $MC=100$, $p=10 000 - q$, totalt lager $S=14 000$. MNB i hver periode er: $MNB=p-MC=9 900 - q$.
+
+Effektivitete: $MNB_1=MNB_2$, og $q_1+q_2=S$. Likevektsforbruk i de to periodene: $9 900 - q_1=9 900 - q_2$ og $q_1+q_2=14 000$.
+
+```{r}
+# Renter
+r <- 0
+# Bruker uniroot for a finne roten til funksjonen
+f <- function(q2) {
+  q1 <- 14000 - q2
+  9900 - q1 - (9900 - q2)
+}
+q2 <- uniroot(f, c(0, 14000))$root
+q1 <- 14000 - q2
+
+```
+
+Her ser vi at vi finner et kvantum på `r round(q1,0)` i periode 1 og `r round(q2,0)` i periode 2. Det er ingen overraskelse at når det ikke er diskontering så blir kvantumet likt fordelt mellom de to periodene.
+
+### Løsning oppgave 3.2
+
+```{r}
+# Finner prisen i hver periode
+p1 <- 10000 - q1
+p2 <- 10000 - q2
+
+# Finner MUC i hver periode
+MUC1 <- p1 - 100
+MUC2 <- p2 - 100
+# Finner konsumentoverskudd i hver periode
+CS1 <- (p1 - 100) * q1 / 2
+CS2 <- (p2 - 100) * q2 / 2
+# Finner produsentoverskudd i hver periode
+PS1 <- (p1 - 100) * q1 - CS1
+PS2 <- (p2 - 100) * q2 - CS2
+# Finner totalt samfunnsøkonomisk overskudd i hver periode, ved å bruke integrasjon
+TS1 <- integrate(function(x) 10000 - x - 100, lower = 0, upper = q1)$value
+TS2 <- integrate(function(x) 10000 - x - 100, lower = 0, upper = q2)$value
+
+
+
+```
+
+Prisene blir `r p1` og `r p2`. Her ser vi at MUC er `r MUC1` i periode 1 og `r MUC2` i periode 2. Konsumentoverskuddet blir `r CS1` i periode 1 og `r CS2` i periode 2. Produsentoverskuddet blir `r PS1` i periode 1 og `r PS2` i periode 2. Totalt samfunnsøkonomisk overskudd blir `r TS1` i periode 1 og `r TS2` i periode 2.
+
+### Løsning oppgave 3.3
+
+```{r}
+# hva skjer nå hvis vi øker uttaket i periode 1 med en enhet
+q1_new <- q1 + 1
+q2_new <- q2 - 1
+# Finner prisen i hver periode
+p1_new <- 10000 - q1_new
+p2_new <- 10000 - q2_new
+# Finner sammfunnsøkonisk overskudd i periode 2 
+TS2_new <- integrate(function(x) 10000 - x - 100, lower = 0, upper = q2_new)$value
+delta_TS2 <- TS2_new - TS2
+
+```
+
+Her ser vi at endringen i konsumentoverskudd i periode 2 er `r delta_TS2`, mens MCUen i periode 1 er `r MUC1`. Dette er lik -MUC i periode 1, som viser sammenhengen mellom endringen i konsumentoverskudd og MUC.
+
+### Løsning oppgave 3.4
+
+Effektivitete: $MNB_1=\frac{MNB_2}{1+r}$, og $q_1+q_2=S$. Likevektsforbruk i de to periodene: $9 900 - q_1=9 900 - q_2$ og $q_1+q_2=14 000$.
+
+```{r}
+# Endrer diskonteringsrenten til 0.4
+r <- 0.4
+# setter opp ny funksjon med diskontering
+f <- function(q2) {
+  q1 <- 14000 - q2
+  9900 - q1 - (9900 - q2)/(1 + r)
+}
+
+q2 <- uniroot(f, c(0, 14000))$root
+q1 <- 14000 - q2
+# Finner prisen i hver periode
+p1 <- 10000 - q1
+p2 <- 10000 - q2
+```
+
+Her ser vi at vi finner et kvantum på `r round(q1,0)` i periode 1 og `r round(q2,0)` i periode 2. Siden det er veldig høy diskongering så blir mye mer brykt i periode 1 eller periode 2.
+
+### Løsning oppgave 3.5
+
+```{r}
+solve_case <- function(r, S = 14000, a = 10000, MC = 100) {
+  MNN <- function(q) (a - MC) - q              # = 9900 - q
+  f   <- function(q2) { q1 <- S - q2; MNN(q1) - MNN(q2)/(1 + r) }
+  q2  <- uniroot(f, c(0, S))$root
+  q1  <- S - q2
+  p   <- function(q) a - q
+  tibble(
+    r = r,
+    label = ifelse(r == 0, "Uten diskontering (r = 0)", "Med diskontering (r = 0.40)"),
+    q1 = q1, q2 = q2,
+    p1 = p(q1), p2 = p(q2),
+    MC = MC
+  )
+}
+
+cases <- bind_rows(
+  solve_case(0),
+  solve_case(0.40)
+)
+
+curve <- tibble(q = seq(0, 10000, by = 100)) %>%
+  mutate(demand = 10000 - q, MC = 100) %>%
+  tidyr::crossing(label = unique(cases$label))
+
+ggplot(curve, aes(x = q)) +
+  geom_line(aes(y = demand)) +
+  geom_hline(aes(yintercept = MC), linetype = "dashed") +
+  # q1- og q2-markører per panel
+  geom_vline(data = cases, aes(xintercept = q1, color = "Periode 1"), linetype = "dotted") +
+  geom_vline(data = cases, aes(xintercept = q2, color = "Periode 2"), linetype = "dotted") +
+  # prislinjer fra 0 til q*
+  geom_segment(data = cases, aes(x = 0, xend = q1, y = p1, yend = p1, color = "Periode 1"),
+               linetype = "dotted") +
+  geom_segment(data = cases, aes(x = 0, xend = q2, y = p2, yend = p2, color = "Periode 2"),
+               linetype = "dotted") +
+  # punkter i (q*, p*)
+  geom_point(data = cases, aes(x = q1, y = p1, color = "Periode 1")) +
+  geom_point(data = cases, aes(x = q2, y = p2, color = "Periode 2")) +
+  scale_color_manual(
+    name = "Markering",
+    values = c("Periode 1" = "#1f78b4", "Periode 2" = "#e31a1c")
+  ) +
+  labs(
+    title = "To-periodemodell: visualisering av optimal fordeling",
+    subtitle = "Venstre: uten diskontering (r=0). Høyre: med diskontering (r=0.40).",
+    x = "Kvantum q", y = "Pris p(q)"
+  ) +
+  facet_wrap(~label, nrow = 1) +
+  theme_minimal()
+
+```
+
+### Løsning oppgave 3.6
+
+Siden lambda er lik MUC i periode 1, så kan vi bruke formelen vi fant tidligere: $$
+\lambda(r) \;=\; \frac{7}{\,1+0.5r\,}\,
+$$
+
+```{r}
+# Finner MUC med og uten diskontering
+MUC_no_discount <- 7 / (1 + 0.5 * 0)
+MUC_with_discount <- 7 / (1 + 0.5 * 0.4)
+MUC_no_discount
+MUC_with_discount
+```
+
+Her ser vi at MUC uten diskontering er `r round(MUC_no_discount,2)` og med diskontering er `r round(MUC_with_discount,2)`. Vi ser at MUC er høyere uten diskontering enn med diskontering. Dette er fordi når vi diskonterer så verdsetter vi fremtidig nytte lavere, og dermed blir MUC lavere.
+
+------------------------------------------------------------------------
+
+## Oppgave 4: Marginal User Cost (MUC)
+
+a)  Forklar med egne ord hva MUC er.\
+b)  Bruk to-periodemodellen: tegn en figur der du viser hvordan MUC kommer inn i prisen (P = MC + MUC).\
+c)  Diskuter: hvorfor stiger MUC når marginalkostnaden er konstant, men synker når marginalkostnaden øker med uttak?
+
+### Løsning oppgave 4
+
+**a) Hva er MUC (med egne ord)?**  
+- **MUC** er **knapphetskostnaden**: verdien av den **fremtidige marginale netto nytten** vi ofrer når én ekstra enhet brukes i dag.  
+- I to-periodemodellen er MUC lik **skyggeprisen** (Lagrange-multiplikatoren) på lagerbegrensningen.  
+- I hver periode gjelder:
+$$
+P_t = MC + MUC_t
+$$
+altså
+$$
+MUC_t = P_t - MC.
+$$
+
+---
+
+**b) Figur: Slik kommer MUC inn i prisen ($P = MC + MUC$)**  
+Vi bruker en enkel illustrasjon med etterspørsel $P(q)=10{\,}000 - q$ og $MC=100$. For et illustrativt $q^* = 7{\,}000$ får vi $P^* = 10{\,}000 - 7{\,}000 = 3{\,}000$ og $MUC^* = P^* - MC = 2{\,}900$. Figuren viser at prisen $P^*$ består av **kostnad** (grønn) og **knapphet** (oransje).
+
+```{r}
+library(tidyverse)
+
+a <- 10000
+MC <- 100
+q_star <- 7000
+p_star <- a - q_star
+muc_star <- p_star - MC
+
+df <- tibble(
+  q = seq(0, 10000, by = 100),
+  demand = a - q
+)
+
+ggplot(df, aes(q)) +
+  geom_line(aes(y = demand)) +
+  geom_hline(yintercept = p_star, linetype = "dotted") +
+  geom_vline(xintercept = q_star, linetype = "dotted") +
+  geom_segment(aes(x = q_star, xend = q_star, y = 0,    yend = MC),
+               color = "#2ca02c", linewidth = 6, lineend = "butt") +  # MC (grønn)
+  geom_segment(aes(x = q_star, xend = q_star, y = MC,   yend = p_star),
+               color = "#ff7f00", linewidth = 6, lineend = "butt") +  # MUC (oransje)
+  geom_hline(yintercept = MC, linetype = "dashed", color = "#2ca02c") +
+  labs(
+    title = "P = MC + MUC ved q*",
+    subtitle = paste0("q* = ", q_star, ",  P* = ", p_star, ",  MC = ", MC, ",  MUC* = ", muc_star),
+    x = "Kvantum q", y = "Pris"
+  ) +
+  coord_cartesian(xlim = c(0, 10000), ylim = c(0, max(p_star, a) * 1.05)) +
+  theme_minimal()
+```
+
+**c) Hvorfor stiger MUC når $MC$ er konstant, men kan synke når $MC$ øker med uttak?**
+
+- **Konstant $MC$ (klassisk Hotelling):**  
+  Effektivitetsbetingelsen i to perioder er at marginal netto nytte neddiskonteres likt over tid:
+  $$
+  MNN_1 \;=\; \frac{MNN_2}{1+r},
+  $$
+  der
+  $$
+  MNN_t \;=\; P_t - MC \;=\; MUC_t.
+  $$
+  Dermed følger
+  $$
+  MUC_2 \;=\; (1+r)\,MUC_1 \;>\; MUC_1.
+  $$
+  **Tolkning:** Når kostnaden per enhet er flat, må “knapphetsdelen” av prisen vokse med renten. MUC **stiger over tid**.
+
+- **Økende $MC$ med uttak (stigende kostnadskurve):**  
+  Prisen dekomponeres alltid som
+  $$
+  P_t \;=\; MC_t \;+\; MUC_t.
+  $$
+  Når $MC_t$ **stiger** over tid (dypere/mer krevende uttak), bruker prisen en **større andel** på å dekke kostnad. Da kan **MUC-komponenten synke** (i nivå eller andel). I grensen, når markedet nærmer seg en billig **substitutt/backstop** med pris $\bar P$,
+  $$
+  P_t \to \bar P \quad \text{og} \quad MUC_t \to 0,
+  $$
+  fordi knapphetsrenten forsvinner ved overgangen og prisen hovedsakelig reflekterer kostnad/backstop.
+
+**Oppsummert:** Flat $MC$ ⇒ $MUC$ vokser i takt med renten. Stigende $MC$ ⇒ kostnader “spiser” mer av prisen, slik at $MUC$ kan falle og nær overgang til substitutt går $MUC \to 0$.
+
+
+------------------------------------------------------------------------
+
+## Oppgave 5: Oljefondet og Hartwick’s regel
+
+1.  På hvilken måte kan Statens pensjonsfond utland (Oljefondet) ses som et eksempel på Hartwick’s regel?\
+2.  Diskuter om dette er et eksempel på **svak** eller **sterk** bærekraft.\
+3.  Hva kunne være et eksempel på en ressurs som krever sterk bærekraft?
+
+-   SPU/Oljefondet = eksempel på Hartwick’s regel: investerer ressursrenten i finansiell kapital.\
+-   Dette er **svak bærekraft**.\
+-   Eksempel på sterk bærekraft: Bevaring av truede arter eller unike økosystemer.
+
+------------------------------------------------------------------------
+
+## Oppgave 6: Overgang til substitutter
+
+Se på tre historiske eller framtidige overganger: - Fra hvalolje til petroleum\
+- Fra kull til olje\
+- Fra fossile brensler til sol/vind
+
+1.  Diskuter hvilke faktorer som bestemmer tidspunktet for overgang.\
+2.  Hvilke paralleller kan vi trekke til dagens grønne omstilling?
+
+-   Faktorer: kostnadsbaner, teknologi, politikk, forventninger.\
+-   Eksempler: hvalolje → petroleum, kull → olje, fossilt → sol/vind.\
+-   Parallell til i dag: grønn omstilling drevet av teknologi og CO₂-prising.
+
+------------------------------------------------------------------------
+
+## Oppgave 7: Økende marginalkostnad
+
+Anta at en ressurs har marginalkostnad som stiger med uttak.\
+1. Hvorfor vil ikke hele ressursen nødvendigvis utvinnes?\
+2. Forklar hvorfor MUC faller mot null når overgang til en fornybar substitutt nærmer seg.\
+3. Diskuter et eksempel (f.eks. malmutvinning eller skiferolje).
+
+-   Ikke alt utvinnes: rester blir for dyre relativt til substitutt.\
+-   MUC → 0 ved overgang fordi fremtidig oppofrelse forsvinner.\
+-   Eksempel: lavkonsentrasjonsmalm eller arktisk olje.
+
+------------------------------------------------------------------------
+
+## Oppgave 8: Utforskning og teknologisk fremgang
+
+1.  Bruk eksemplet med Nordsjøoljen eller pelletisering av jernmalm. Hvordan endret nye funn eller teknologi ressursbanen?\
+2.  Diskuter: Kan økende forbruk over tid bety at ressursene forvaltes ineffektivt? Hvorfor / hvorfor ikke?
+
+-   **Nordsjøoljen**: nye funn → større reserver.\
+-   **Pelletisering av malm**: teknologi senket kostnader.\
+-   Økt forbruk kan være effektivt dersom det skyldes lavere kostnader, ikke ineffektivitet.
+
+------------------------------------------------------------------------
+
+## Oppgave 9: Markedsallokering og miljøkostnader
+
+Anta at utvinning av en ressurs gir en ekstern miljøkostnad på 1 kr/enhet.\
+1. Hvordan endres effektiv pris og uttak hvis denne kostnaden internaliseres?\
+2. Diskuter eksempler fra Norge (f.eks. gruveavfall, dagbrudd).\
+3. Hvilken rolle bør staten spille for å sikre dynamisk effektivitet?
+
+-   Ekstern kostnad på 1 kr/enhet → MC skifter opp → høyere pris, lavere uttak, tidligere overgang.\
+-   Eksempel: gruveavfall i fjorder, dagbrudd.\
+-   Statens rolle: miljøavgifter, regulering, sikre effektiv intertemporal allokering.
+
+------------------------------------------------------------------------
+
+### Diskusjonsspørsmål
+
+-   Skal miljøprosjekter vurderes med lavere diskonteringsrente enn andre prosjekter?\
+-   Er dagens forvaltning av oljefondet rettferdig for fremtidige generasjoner?\
+-   Hvordan kan vi sikre en jevn og bærekraftig overgang til fornybare ressurser?
