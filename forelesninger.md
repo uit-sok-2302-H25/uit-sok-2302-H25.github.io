@@ -66,7 +66,7 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 * [F6 - R kode](assets/F6_SOK2302_H25.R)
 
 ### F7 - Kontroll av forurrensing
-
+* [F7 - Kontroll av forurensing](assets/F7_sok2302_h25_forurensning.pdf)
 #### Støtteressurser (youtube-filmer)
 * [The hidden cost of pollution - Marginal revolutiin university](https://www.youtube.com/watch?v=JLHXYTbSQZY)
 * [Omsettelige utslippsrettigheter 1 - Marginal revolution university](https://www.youtube.com/watch?v=9tUb3MDrgEc)
