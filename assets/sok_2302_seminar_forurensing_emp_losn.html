@@ -59,17 +59,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="sok_2302_seminar_forurensing_emp_files/libs/clipboard/clipboard.min.js"></script>
-<script src="sok_2302_seminar_forurensing_emp_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="sok_2302_seminar_forurensing_emp_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="sok_2302_seminar_forurensing_emp_files/libs/quarto-html/popper.min.js"></script>
-<script src="sok_2302_seminar_forurensing_emp_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="sok_2302_seminar_forurensing_emp_files/libs/quarto-html/anchor.min.js"></script>
-<link href="sok_2302_seminar_forurensing_emp_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="sok_2302_seminar_forurensing_emp_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="sok_2302_seminar_forurensing_emp_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="sok_2302_seminar_forurensing_emp_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="sok_2302_seminar_forurensing_emp_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="sok_2302_seminar_forurensing_emp_losn_files/libs/clipboard/clipboard.min.js"></script>
+<script src="sok_2302_seminar_forurensing_emp_losn_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="sok_2302_seminar_forurensing_emp_losn_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="sok_2302_seminar_forurensing_emp_losn_files/libs/quarto-html/popper.min.js"></script>
+<script src="sok_2302_seminar_forurensing_emp_losn_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="sok_2302_seminar_forurensing_emp_losn_files/libs/quarto-html/anchor.min.js"></script>
+<link href="sok_2302_seminar_forurensing_emp_losn_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="sok_2302_seminar_forurensing_emp_losn_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="sok_2302_seminar_forurensing_emp_losn_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="sok_2302_seminar_forurensing_emp_losn_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="sok_2302_seminar_forurensing_emp_losn_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -161,6 +161,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Lag en graf som viser nettot i de ulike landene for de årene som er tilgjengelige i datamaterialet.</p></li>
 <li><p>Tolke grafen i forhold til handel med utslippsrettigheter. Hvem har behov for å kjøpe og selge utslippsrettigheter? Er det noen land som ser ut å ha større behov? Ser det ut å være noen trender i handelen?</p></li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nordic_countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Finland"</span>, <span class="st">"Norway"</span>, <span class="st">"Denmark"</span>, <span class="st">"Sweden"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2013"</span>, <span class="st">"2014"</span>, <span class="st">"2015"</span>, <span class="st">"2016"</span>, <span class="st">"2017"</span>, <span class="st">"2018"</span>, <span class="st">"2019"</span>, <span class="st">"2020"</span>, <span class="st">"2021"</span>, <span class="st">"2022"</span>, <span class="st">"2023"</span>, <span class="st">"2024"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>allowances_emissions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"1.1 Freely allocated allowances"</span>, <span class="st">"2. Verified emissions"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>all_sectors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"20-99 All stationary installations"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>country_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Denmark"</span>, <span class="st">"Finland"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ets_nordic <span class="ot">&lt;-</span> ets_all_raw <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> nordic_countries)<span class="sc">%&gt;%</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ETS_information <span class="sc">%in%</span> allowances_emissions)<span class="sc">%&gt;%</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> years)<span class="sc">%&gt;%</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sector <span class="sc">%in%</span> all_sectors)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#head(ets_nordic)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe med nettot av gratis utslippsrettigheter og utslipp i de nordiske landene</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>ets_balance <span class="ot">&lt;-</span> ets_nordic <span class="sc">%&gt;%</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Behold de variabler vi trenger</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, ETS_information, value, year) <span class="sc">%&gt;%</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Reshape so that emissions and allowances are in separate columns</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ETS_information,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> value</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Gi nye navn for enklere bruk seinere</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">emissions =</span> <span class="st">`</span><span class="at">2. Verified emissions</span><span class="st">`</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">free_allowances =</span> <span class="st">`</span><span class="at">1.1 Freely allocated allowances</span><span class="st">`</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Beregn netto</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">trade_balance =</span> free_allowances <span class="sc">-</span> emissions</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>country_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Denmark"</span>, <span class="st">"Finland"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># PLOT</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plot_trade <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ets_balance, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> trade_balance, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span>  <span class="co"># Create side-by-side bars</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"År"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">" Salg av utslippsrettigheter (kilo ton CO2-ekv) "</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Handel med utslippsrettigheter"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Denmark"</span> <span class="ot">=</span> <span class="st">"hotpink"</span>, <span class="st">"Finland"</span> <span class="ot">=</span> <span class="st">"violetred"</span>, <span class="st">"Norway"</span> <span class="ot">=</span> <span class="st">"darkmagenta"</span>, </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Sweden"</span> <span class="ot">=</span> <span class="st">"blueviolet"</span>),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> country_order,  <span class="co"># Ensure legend matches the factor_levels</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> country_order,  <span class="co"># Ensure labels match the factor_levels</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>)  <span class="co"># Remove legend title</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span>   <span class="co"># avoid scientific notation</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_trade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="sok_2302_seminar_forurensing_emp_losn_files/figure-html/plot_trade_nordic-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="oppgave-2" class="level2">
 <h2 class="anchored" data-anchor-id="oppgave-2">Oppgave 2</h2>
@@ -170,6 +236,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Lag en graf som viser utslippene av CO2-ekvivalenter i de ulike sektorene over tid. Tips: bruke “facet_wrap(~sector, scales =”free_y”)” for å lage en graf per sektor og la y-akselen variere mellom grafene.</li>
 <li>Hvordan skal vi tolke disse grafene? Ser du noen fordeler og/eller ulemper med å bruke scales = “free_y” når vi skal tolke grafene?</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Norway <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Norway"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  emissions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2. Verified emissions"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  sectors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"10 Aviation"</span>, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"20 Combustion of fuels"</span>, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"21  Refining of mineral oil"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"24  Production of pig iron or steel"</span>, </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"29 Production of cement clinker"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">"31 Manufacture of glass"</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">"30 Production of lime, or calcination of dolomite/magnesite"</span>, </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>               <span class="st">"32 Manufacture of ceramics"</span>, </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>               <span class="st">"34 Production or processing of gypsum or plasterboard"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">"35 Production of pulp"</span>, </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">"36 Production of paper or cardboard"</span>,  </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>               <span class="st">"42 Production of bulk chemicals"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  ets_norway <span class="ot">&lt;-</span> ets_all_raw <span class="sc">%&gt;%</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(country <span class="sc">%in%</span> Norway) <span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ETS_information <span class="sc">%in%</span> emissions)<span class="sc">%&gt;%</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(sector<span class="sc">%in%</span> sectors )<span class="sc">%&gt;%</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">CO2_ekv =</span> value)<span class="sc">%&gt;%</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.numeric</span>(year))<span class="sc">%&gt;%</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">CO2_ekv =</span> <span class="fu">as.numeric</span>(CO2_ekv))<span class="sc">%&gt;%</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">CO2_ekv_kton =</span> CO2_ekv<span class="sc">/</span><span class="dv">1000</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(year))</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  plot_nor <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ets_norway, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> CO2_ekv_kton, <span class="at">color =</span> sector, <span class="at">group =</span> sector)) <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>sector, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>        <span class="co"># Draw lines</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span>       <span class="co"># Add points for each year</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"År"</span>,</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Kilo ton CO2 ekvivalenter"</span>,</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Verified Emissions in different sectors in Norway"</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(plot_nor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="sok_2302_seminar_forurensing_emp_losn_files/figure-html/norway-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 
