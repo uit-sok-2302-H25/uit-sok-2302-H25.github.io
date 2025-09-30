@@ -18,4 +18,7 @@ På denne siden vil vi legge opp seminaroppgaver og eventuelle løsninger til op
 ## S4 - Kontroll av forurensning
 
 * [S4 - Kontroll av forurensning -teoretiske oppgaver (Python) ](https://colab.research.google.com/drive/1QnH9IIC06KHd46ha2UAjOZUKoqyFnc0d?usp=sharing)
+    * [S4 - Kontroll av forurensning -teoretiske oppgaver - løsningsforslag (Python)](https://colab.research.google.com/drive/1ItIOt6JtBEdeK4MWFxCBgR_QYPsl-Txt?usp=sharing) 
 * [S4 - Kontroll av forurensning - Empiriske oppgaver (R) ](https://uit-sok-2302-H25.github.io/assets/sok_2302_seminar_forurensing_emp.html)
+    * [S4 - Kontroll av forurensning - Empiriske oppgaver - løsn  (R) ](https://uit-sok-2302-H25.github.io/assets/sok_2302_seminar_forurensing_emp.html) 
+
