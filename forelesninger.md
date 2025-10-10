@@ -77,6 +77,7 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 ### F8 - Klima 1
 
 #### Forelesningsnotater
+* [F8 - Klimaendringer](assets/F8_climatechange1_sok2302_h25.pdf)
 #### Støtteressurser
 * [The Tipping Points of Climate Change — and Where We Stand. Johan Rockström. TED](https://www.youtube.com/watch?v=Vl6VhCAeEfQ)
 * [How scientists calculate climate change - the Economist](https://www.youtube.com/watch?v=fSGorwtY-zM)
