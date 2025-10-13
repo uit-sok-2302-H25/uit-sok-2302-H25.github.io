@@ -78,7 +78,9 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 
 #### Forelesningsnotater
 * [F8 - Klimaendringer](assets/F8_climatechange1_sok2302_h25.pdf)
+  
 #### Støtteressurser
+* [Youtube - The carbon cycle is key to understanding climate change. The Economist](https://www.youtube.com/watch?v=yhlg9txl7yM)
 * [The Tipping Points of Climate Change — and Where We Stand. Johan Rockström. TED](https://www.youtube.com/watch?v=Vl6VhCAeEfQ)
 * [How scientists calculate climate change - the Economist](https://www.youtube.com/watch?v=fSGorwtY-zM)
 * [Europe's environment 2025 - Main report](https://www.eea.europa.eu/en/europe-environment-2025)
