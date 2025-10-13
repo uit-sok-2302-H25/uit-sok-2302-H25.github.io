@@ -83,7 +83,7 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 * [How scientists calculate climate change - the Economist](https://www.youtube.com/watch?v=fSGorwtY-zM)
 * [Europe's environment 2025 - Main report](assets/TH-01-25-025-EN-N_Europes_environment_and_climate_LR_2.pdf)
 * [Planetary health check 2025](assets/PlanetaryHealthCheck2025_ExecutiveSummary.pdf)
-* [Global tipping points report 2025](assets/GTP_summary_report_2025-V5-111025-PAGES-LO-RES.pdf)
+* [Global tipping points report 2025](https://www.eea.europa.eu/en/europe-environment-2025)
 
 
 ### F9 - Klima 2
