@@ -89,8 +89,13 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 
 
 ### F9 - Klima 2
+
+#### Forelesningsnotater
+* [F8 - tilpasning](assets/sok_2302_cc_adaptation.pdf)
+
 ### F10 - Bærekraftig utvikling og sirkulær økonomi 1
 
+  
 #### Forelesningsnotater
 
 #### Støtteressurser
