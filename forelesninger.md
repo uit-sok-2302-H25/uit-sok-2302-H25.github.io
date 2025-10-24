@@ -74,10 +74,12 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 * [Pigou-skatt - Marginal revolution university](https://www.youtube.com/watch?v=CpVf11f09Pk)
 
   
-### F8 - Klima 1
+### Klima
 
 #### Forelesningsnotater
 * [F8 - Klimaendringer](assets/F8_climatechange1_sok2302_h25.pdf)
+* [F9 - Tilpasning](assets/sok_2302_cc_adaptation.pdf)
+
   
 #### Støtteressurser
 * [Youtube - The carbon cycle is key to understanding climate change. The Economist](https://www.youtube.com/watch?v=yhlg9txl7yM)
@@ -88,19 +90,14 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 * [Global tipping points report 2025](assets/GTP_summary_report_2025-V5-111025-PAGES-LO-RES.pdf)
 
 
-### F9 - Klima 2
-
-#### Forelesningsnotater
-* [F8 - tilpasning](assets/sok_2302_cc_adaptation.pdf)
-
-### F10 - Bærekraftig utvikling og sirkulær økonomi 1
-
+### Bærekraftig utvikling og sirkulær økonomi
+* [F10 - Bærekraftig utvikling og sirkulær økonomi 1](assets/F10_sok_2302_BU_1.pdf)
   
-#### Forelesningsnotater
+
 
 #### Støtteressurser
 * [Managing natural resources - Acheiving more with less - OECD](https://www.youtube.com/watch?v=ZERrpFwETgs)
 
-### F11 - Bærekraftig utvikling og sirkulær økonomi 2
+
 
 
