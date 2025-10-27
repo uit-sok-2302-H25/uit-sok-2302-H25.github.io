@@ -92,6 +92,7 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 
 ### Bærekraftig utvikling og sirkulær økonomi
 * [F10 - Bærekraftig utvikling og sirkulær økonomi 1](assets/F10_sok_2302_BU_1.pdf)
+* [F11 - Bærekraftig utvikling og sirkulær økonomi 2](assets/F10_sok_2302_BU_2_2025.10.27.pdf)
   
 
 
