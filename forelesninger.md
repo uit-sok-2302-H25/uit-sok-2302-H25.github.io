@@ -95,10 +95,13 @@ På denne siden vil vi laste opp forelesningsnotater og andre ressurser som vi t
 * [F11 - Bærekraftig utvikling og sirkulær økonomi 2](assets/F10_sok_2302_BU_2_2025.10.27.pdf)
   
 
-
 #### Støtteressurser
 * [Managing natural resources - Acheiving more with less - OECD](https://www.youtube.com/watch?v=ZERrpFwETgs)
 
+### Oppsummering
 
+#### Forelesningsnotater
+
+* [F12- Oppsummering](assets/F12_sok2302_h25_oppsummering_2025.11.03.pdf)
 
 
